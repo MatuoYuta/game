@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class Player : MonoBehaviour
 {
     [SerializeField, Header("ˆÚ“®‘¬“x")]
     private float _movespeed;
 
+    private Animator _anim;
     private Vector2 _inputDirection;
     private Rigidbody2D _rigid;
 
@@ -15,6 +17,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         _rigid = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
+
 
     }
 
@@ -27,6 +31,7 @@ public class Player : MonoBehaviour
     private void _Move()
     {
         _rigid.velocity = new Vector2(_inputDirection.x * _movespeed, _rigid.velocity.y);
+        _anim.SetBool("run", _inputDirection.x != 0.0f);
 
     }
 
