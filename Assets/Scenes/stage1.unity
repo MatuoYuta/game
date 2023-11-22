@@ -2077,6 +2077,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movespeed: 10
+  _jumpSpeed: 0
 --- !u!114 &413116799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2166,6 +2167,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 8fd056d3-5300-452f-b0db-65e28f5c5c35
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: cb573082f1d8be341ad227a0fdf4e26b, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 421d8fc3-043c-4223-bac9-356e0c2e3cb0
+    m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
