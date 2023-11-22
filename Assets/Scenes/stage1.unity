@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 12119554}
   - component: {fileID: 12119553}
+  - component: {fileID: 12119555}
   m_Layer: 0
   m_Name: TX Village Props - Tree 01
   m_TagString: Untagged
@@ -207,6 +208,32 @@ Transform:
   m_Father: {fileID: 293411727}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &12119555
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12119552}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.078125, y: 2.515625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5163399, y: 0.006134969}
+    oldSize: {x: 4.78125, y: 5.09375}
+    newSize: {x: 4.78125, y: 5.09375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.78125, y: 5.09375}
+  m_EdgeRadius: 0
 --- !u!1 &38804493
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,13 +310,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38804493}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.04, y: -2.997062, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 37.04, y: -2.9970617, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &145430903
 GameObject:
@@ -1490,6 +1517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 166508402}
   - component: {fileID: 166508401}
+  - component: {fileID: 166508403}
   m_Layer: 0
   m_Name: TX Village Props - Platform M 01
   m_TagString: Untagged
@@ -1564,6 +1592,32 @@ Transform:
   m_Father: {fileID: 293411727}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &166508403
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166508400}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: -0.40625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 1, y: 0.8125}
+    newSize: {x: 1, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.8125}
+  m_EdgeRadius: 0
 --- !u!1 &259516671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 259516673}
   - component: {fileID: 259516672}
+  - component: {fileID: 259516674}
   m_Layer: 0
   m_Name: TX Village Props - Platform M 01 (5)
   m_TagString: Untagged
@@ -1648,6 +1703,32 @@ Transform:
   m_Father: {fileID: 293411727}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &259516674
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259516671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: -0.40625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 1, y: 0.8125}
+    newSize: {x: 1, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.8125}
+  m_EdgeRadius: 0
 --- !u!1 &293411726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,6 +1874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400363827}
   - component: {fileID: 400363826}
+  - component: {fileID: 400363828}
   m_Layer: 0
   m_Name: TX Village Props - Platform M 01 (3)
   m_TagString: Untagged
@@ -1867,6 +1949,32 @@ Transform:
   m_Father: {fileID: 293411727}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &400363828
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400363825}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: -0.40625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 1, y: 0.8125}
+    newSize: {x: 1, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.8125}
+  m_EdgeRadius: 0
 --- !u!1 &413116795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1949,7 +2057,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413116795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.93, y: -1.09, z: 0}
+  m_LocalPosition: {x: -4.96, y: -1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2811,7 +2919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064000360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.2, y: -10.114686, z: -0.5151354}
+  m_LocalPosition: {x: -15.2, y: -10.14, z: -0.5151354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3346,6 +3454,7 @@ Transform:
   - {fileID: 2077929866}
   - {fileID: 933983526}
   - {fileID: 1064000361}
+  - {fileID: 1780439112}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3359,6 +3468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1598503113}
   - component: {fileID: 1598503112}
+  - component: {fileID: 1598503114}
   m_Layer: 0
   m_Name: TX Village Props - Platform M 01 (4)
   m_TagString: Untagged
@@ -3433,6 +3543,32 @@ Transform:
   m_Father: {fileID: 293411727}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1598503114
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598503111}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: -0.40625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 1, y: 0.8125}
+    newSize: {x: 1, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.8125}
+  m_EdgeRadius: 0
 --- !u!1 &1601860355
 GameObject:
   m_ObjectHideFlags: 0
@@ -3549,6 +3685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1602949210}
   - component: {fileID: 1602949209}
+  - component: {fileID: 1602949211}
   m_Layer: 0
   m_Name: TX Village Props - Platform M 01 (2)
   m_TagString: Untagged
@@ -3623,6 +3760,32 @@ Transform:
   m_Father: {fileID: 293411727}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1602949211
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602949208}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: -0.40625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 1, y: 0.8125}
+    newSize: {x: 1, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.8125}
+  m_EdgeRadius: 0
 --- !u!1 &1710176572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,13 +3946,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780439110}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.36, y: -3.03, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.891512, y: -10.102222, z: -0.5151354}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1592692561}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1871391558
 GameObject:
@@ -3801,6 +3964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1871391560}
   - component: {fileID: 1871391559}
+  - component: {fileID: 1871391561}
   m_Layer: 0
   m_Name: TX Village Props - Platform M 01 (1)
   m_TagString: Untagged
@@ -3875,6 +4039,32 @@ Transform:
   m_Father: {fileID: 293411727}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1871391561
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871391558}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: -0.40625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 1, y: 0.8125}
+    newSize: {x: 1, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.8125}
+  m_EdgeRadius: 0
 --- !u!1 &1883833719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,6 +4159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1909046439}
   - component: {fileID: 1909046438}
+  - component: {fileID: 1909046440}
   m_Layer: 0
   m_Name: TX Village Props - Platform L 01
   m_TagString: Untagged
@@ -4043,6 +4234,32 @@ Transform:
   m_Father: {fileID: 293411727}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1909046440
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909046437}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.4375, y: -0.40625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.11111111, y: 1}
+    oldSize: {x: 1.125, y: 0.8125}
+    newSize: {x: 1.125, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.125, y: 0.8125}
+  m_EdgeRadius: 0
 --- !u!1 &1984396261
 GameObject:
   m_ObjectHideFlags: 0
@@ -4053,6 +4270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1984396263}
   - component: {fileID: 1984396262}
+  - component: {fileID: 1984396264}
   m_Layer: 0
   m_Name: TX Village Props - Platform R 02
   m_TagString: Untagged
@@ -4127,6 +4345,32 @@ Transform:
   m_Father: {fileID: 293411727}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1984396264
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984396261}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.4375, y: -0.40625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.8888889, y: 1}
+    oldSize: {x: 1.125, y: 0.8125}
+    newSize: {x: 1.125, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.125, y: 0.8125}
+  m_EdgeRadius: 0
 --- !u!1 &2026268240
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,7 +4447,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026268240}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4305,6 +4549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2142692625}
   - component: {fileID: 2142692624}
+  - component: {fileID: 2142692626}
   m_Layer: 0
   m_Name: TX Village Props - Platform M 01 (6)
   m_TagString: Untagged
@@ -4379,3 +4624,29 @@ Transform:
   m_Father: {fileID: 293411727}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2142692626
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142692623}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: -0.40625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 1}
+    oldSize: {x: 1, y: 0.8125}
+    newSize: {x: 1, y: 0.8125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.8125}
+  m_EdgeRadius: 0
