@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         _Move();
+        _LookMoveDirect();
+
     }
 
     private void _Move()
@@ -38,5 +40,17 @@ public class Player : MonoBehaviour
     public void _OnMove(InputAction.CallbackContext context)
     {
         _inputDirection = context.ReadValue<Vector2>();
+    }
+
+    private void _LookMoveDirect()
+    {
+        if (_inputDirection.x < 0.0f)
+        {
+            transform.eulerAngles = Vector3.zero;
+        }
+        else if (_inputDirection.x > 0.0f)
+        {
+            transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
+        }
     }
 }
