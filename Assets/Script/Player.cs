@@ -21,9 +21,8 @@ public class Player : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         _rigid = GetComponent<Rigidbody2D>();
-        _anim = GetComponent<Animator>();
         _bjump = false;
-
+        _anim = GetComponent<Animator>();
 
     }
 
@@ -32,7 +31,7 @@ public class Player : MonoBehaviour
     {
         _Move();
         _LookMoveDirect();
-        _HitFloor();
+        //_HitFloor();
 
 
     }
@@ -67,9 +66,12 @@ public class Player : MonoBehaviour
         if (!context.performed || _bjump) return;
 
         _rigid.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+        _bjump = true;
+        _anim.SetBool("jump", _bjump);
+
     }
 
-    private void _HitFloor()
+    /*private void _HitFloor()
     {
         int layerMask = LayerMask.GetMask("Floor");
         Vector3 rayPos = transform.position - new Vector3(0.0f, transform.lossyScale.y / 2.0f);
@@ -83,6 +85,14 @@ public class Player : MonoBehaviour
         }
 
         if (rayHit.transform.tag == "floor" && _bjump)
+        {
+            _bjump = false;
+            _anim.SetBool("jump", _bjump);
+        }
+    }*/
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "floor")
         {
             _bjump = false;
             _anim.SetBool("jump", _bjump);
