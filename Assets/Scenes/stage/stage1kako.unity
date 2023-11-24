@@ -303,6 +303,8 @@ GameObject:
   - component: {fileID: 145609636}
   - component: {fileID: 145609635}
   - component: {fileID: 145609637}
+  - component: {fileID: 145609639}
+  - component: {fileID: 145609638}
   m_Layer: 8
   m_Name: Tilemap
   m_TagString: floor
@@ -1396,6 +1398,75 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
+--- !u!66 &145609638
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145609633}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 145609637}
+    m_ColliderPaths:
+    - - X: 190000000
+        Y: -30000000
+      - X: -120000000
+        Y: -30000000
+      - X: -120000000
+        Y: -50000000
+      - X: 190000000
+        Y: -50000000
+    - - X: 440000000
+        Y: -30000000
+      - X: 280000000
+        Y: -30000000
+      - X: 280000000
+        Y: -50000000
+      - X: 440000000
+        Y: -50000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 43.999973, y: -5}
+      - {x: 43.999973, y: -3}
+      - {x: 28, y: -3.0000293}
+      - {x: 28.000029, y: -5}
+    - - {x: 18.999971, y: -5}
+      - {x: 18.999971, y: -3}
+      - {x: -12, y: -3.0000293}
+      - {x: -11.99997, y: -5}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!50 &145609639
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145609633}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &293411726
 GameObject:
   m_ObjectHideFlags: 0
