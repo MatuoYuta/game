@@ -74,8 +74,8 @@ public class Player : MonoBehaviour
     private void _HitFloor()
     {
         int layerMask = LayerMask.GetMask("Floor");
-        Vector3 rayPos = transform.position - new Vector3(0.0f, transform.lossyScale.y / 0.5f);
-        Vector3 raySize = new Vector3(transform.lossyScale.x - 0.1f, 0.1f);
+        Vector3 rayPos = transform.position - new Vector3(0.0f, transform.lossyScale.y / 0.643f);
+        Vector3 raySize = new Vector3(transform.lossyScale.x - 0.3f, 0.1f);
         RaycastHit2D rayHit = Physics2D.BoxCast(rayPos, raySize, 0.0f, Vector2.zero, 0.0f, layerMask);
         if (rayHit.transform == null)
         {
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
         if (rayHit.transform.tag == "floor" && _bjump)
         {
             _bjump = false;
-            //_anim.SetBool("jump", _bjump);
+            _anim.SetBool("jump", _bjump);
         }
     }
     /*private void OnCollisionEnter2D(Collision2D collision)
@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.red; // ギズモの色を赤に設定
 
         // ボックスキャストのパラメーターをシーンビューに描画
-        Gizmos.DrawWireCube(transform.position - new Vector3(0.0f, transform.lossyScale.y / 0.5f), new Vector3(transform.lossyScale.x - 0.1f, 0.1f));
+        Gizmos.DrawWireCube(transform.position - new Vector3(0.0f, transform.lossyScale.y / 0.643f), new Vector3(transform.lossyScale.x - 0.3f, 0.1f));
     }
 
 }
