@@ -2785,9 +2785,9 @@ GameObject:
   - component: {fileID: 1871391560}
   - component: {fileID: 1871391559}
   - component: {fileID: 1871391561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TX Village Props - Platform M 01 (1)
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2980,9 +2980,9 @@ GameObject:
   - component: {fileID: 1909046439}
   - component: {fileID: 1909046438}
   - component: {fileID: 1909046440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TX Village Props - Platform L 01
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3091,9 +3091,9 @@ GameObject:
   - component: {fileID: 1984396263}
   - component: {fileID: 1984396262}
   - component: {fileID: 1984396264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TX Village Props - Platform R 02
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
