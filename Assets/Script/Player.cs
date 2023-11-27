@@ -38,8 +38,9 @@ public class Player : MonoBehaviour
 
     private void _Move()
     {
-        if (_bjump) return;
-        _rigid.velocity = new Vector2(_inputDirection.x * _movespeed, _rigid.velocity.y);
+        //if (_bjump) return;
+        float currentMoveSpeed = _movespeed;
+        _rigid.velocity = new Vector2(_inputDirection.x * currentMoveSpeed, _rigid.velocity.y);
         _anim.SetBool("run", _inputDirection.x != 0.0f);
 
     }
