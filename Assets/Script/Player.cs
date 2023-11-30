@@ -10,8 +10,11 @@ public class Player : MonoBehaviour
     private float _movespeed;
     [SerializeField, Header("ジャンプ速度")]
     private float _jumpSpeed;
+    [SerializeField, Header("梯子で上る速度")]
+    private float _ladderSpeed;
 
     private bool _bjump;
+    private bool _bladder;
     private Animator _anim;
     private Vector2 _inputDirection;
     private Rigidbody2D _rigid;
@@ -22,6 +25,7 @@ public class Player : MonoBehaviour
         Application.targetFrameRate = 60;
         _rigid = GetComponent<Rigidbody2D>();
         _bjump = false;
+        _bladder = false;
         _anim = GetComponent<Animator>();
 
     }
@@ -32,7 +36,7 @@ public class Player : MonoBehaviour
         _Move();
         _LookMoveDirect();
         _HitFloor();
-
+        _HitLadder();
 
     }
 
@@ -105,7 +109,41 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.red; // ギズモの色を赤に設定
 
         // ボックスキャストのパラメーターをシーンビューに描画
-        Gizmos.DrawWireCube(transform.position - new Vector3(0.0f, transform.lossyScale.y / 0.63f), new Vector3(transform.lossyScale.x - 0.3f, 0.1f));
+        Gizmos.DrawWireCube(transform.position - new Vector3(-0.7f, transform.lossyScale.y / 1.0f), new Vector3(transform.lossyScale.x - 0.85f, 1.0f));
+    }
+
+    public void _OnLadder(InputAction.CallbackContext context)
+    {
+        float LadderSpeed = _ladderSpeed;
+        _rigid.velocity = new Vector2(_rigid.velocity.x, _inputDirection.y * LadderSpeed);
+
+    }
+
+    private void _HitLadder()
+    {
+
+        int layerMask = LayerMask.GetMask("Ladder");
+        Vector3 rayPos = transform.position - new Vector3(-0.7f, transform.lossyScale.y / 1.0f);
+        Vector3 raySize = new Vector3(transform.lossyScale.x - 0.85f, 1.0f);
+        RaycastHit2D rayHit = Physics2D.BoxCast(rayPos, raySize, 0.0f, Vector2.zero, 0.0f, layerMask);
+        if (rayHit.transform == null)
+        {
+            _bladder = true;
+
+            return;
+        }
+
+        if (rayHit.transform.tag == "ladder" && _bladder)
+        {
+            _bladder = false;
+        }
+    }
+    private void OnDrawGizmos2()
+    {
+        Gizmos.color = Color.blue; // ギズモの色を赤に設定
+
+        // ボックスキャストのパラメーターをシーンビューに描画
+        Gizmos.DrawWireCube(transform.position - new Vector3(0.0f, transform.lossyScale.y / 1.0f), new Vector3(transform.lossyScale.x - 0.3f, 0.1f));
     }
 
 }
