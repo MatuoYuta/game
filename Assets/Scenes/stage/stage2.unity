@@ -9924,9 +9924,10 @@ GameObject:
   m_Component:
   - component: {fileID: 383236212}
   - component: {fileID: 383236213}
-  m_Layer: 0
+  - component: {fileID: 383236214}
+  m_Layer: 9
   m_Name: TX Village Props - Ladder 01 Side LB (4)
-  m_TagString: Untagged
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9998,6 +9999,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &383236214
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383236211}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.046875, y: -0.515625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.57894737, y: 1}
+    oldSize: {x: 0.59375, y: 1.03125}
+    newSize: {x: 0.59375, y: 1.03125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.59375, y: 1.03125}
+  m_EdgeRadius: 0
 --- !u!1 &431570624
 GameObject:
   m_ObjectHideFlags: 0
@@ -10227,9 +10254,10 @@ GameObject:
   m_Component:
   - component: {fileID: 566427934}
   - component: {fileID: 566427935}
-  m_Layer: 0
+  - component: {fileID: 566427936}
+  m_Layer: 9
   m_Name: TX Village Props - Ladder 01 Side LB (3)
-  m_TagString: Untagged
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10301,6 +10329,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &566427936
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566427933}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.046875, y: -0.515625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.57894737, y: 1}
+    oldSize: {x: 0.59375, y: 1.03125}
+    newSize: {x: 0.59375, y: 1.03125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.59375, y: 1.03125}
+  m_EdgeRadius: 0
 --- !u!1 &725381873
 GameObject:
   m_ObjectHideFlags: 0
@@ -10631,9 +10685,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1182502978}
   - component: {fileID: 1182502979}
-  m_Layer: 0
+  - component: {fileID: 1182502980}
+  m_Layer: 9
   m_Name: TX Village Props - Ladder 01 Side LB
-  m_TagString: Untagged
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10705,6 +10760,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1182502980
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182502977}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.046875, y: -0.515625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.57894737, y: 1}
+    oldSize: {x: 0.59375, y: 1.03125}
+    newSize: {x: 0.59375, y: 1.03125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.59375, y: 1.03125}
+  m_EdgeRadius: 0
 --- !u!1 &1330289889
 GameObject:
   m_ObjectHideFlags: 0
@@ -10868,6 +10949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movespeed: 10
   _jumpSpeed: 5
+  _ladderSpeed: 0
 --- !u!114 &1378356557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10973,6 +11055,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5d09d24d-980c-465f-ab11-f01ac18ce288
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1378356556}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: _OnLadder
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3497e1c4-b8c6-4168-ace5-4ff07f0d53d7
+    m_ActionName: Player/Climb[/Keyboard/w]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -11346,9 +11444,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1833220539}
   - component: {fileID: 1833220540}
-  m_Layer: 0
+  - component: {fileID: 1833220541}
+  m_Layer: 9
   m_Name: TX Village Props - Ladder 01 Side LB (1)
-  m_TagString: Untagged
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11420,6 +11519,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1833220541
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833220538}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.046875, y: -0.515625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.57894737, y: 1}
+    oldSize: {x: 0.59375, y: 1.03125}
+    newSize: {x: 0.59375, y: 1.03125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.59375, y: 1.03125}
+  m_EdgeRadius: 0
 --- !u!1 &1848552476
 GameObject:
   m_ObjectHideFlags: 0
@@ -11577,9 +11702,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1861655736}
   - component: {fileID: 1861655737}
-  m_Layer: 0
+  - component: {fileID: 1861655738}
+  m_Layer: 9
   m_Name: TX Village Props - Ladder 01 Side LB (2)
-  m_TagString: Untagged
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11651,6 +11777,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1861655738
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861655735}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.046875, y: -0.515625}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.57894737, y: 1}
+    oldSize: {x: 0.59375, y: 1.03125}
+    newSize: {x: 0.59375, y: 1.03125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.59375, y: 1.03125}
+  m_EdgeRadius: 0
 --- !u!1 &1906236108
 GameObject:
   m_ObjectHideFlags: 0
@@ -11906,9 +12058,10 @@ GameObject:
   - component: {fileID: 2026268243}
   - component: {fileID: 2026268242}
   - component: {fileID: 2026268241}
-  m_Layer: 0
+  - component: {fileID: 2026268244}
+  m_Layer: 9
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: ladder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11979,6 +12132,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2026268244
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026268240}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &2039986515
 GameObject:
   m_ObjectHideFlags: 0
