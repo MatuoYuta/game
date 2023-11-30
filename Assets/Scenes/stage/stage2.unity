@@ -137,9 +137,9 @@ GameObject:
   - component: {fileID: 145609637}
   - component: {fileID: 145609639}
   - component: {fileID: 145609638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
