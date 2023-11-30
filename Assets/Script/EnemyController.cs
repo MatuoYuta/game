@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController: MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     #region//インスペクターで設定する
     [Header("移動速度")] public float speed;
     [Header("重力")] public float gravity;
     [Header("画面外でも行動する")] public bool nonVisibleAct;
+    [Header("接触判定")] public EnemyCollisionCheck checkCollision;
     #endregion
 
     #region//プライベート変数
@@ -27,6 +28,10 @@ public class EnemyController: MonoBehaviour
     {
         if (sr.isVisible || nonVisibleAct)
         {
+            if (checkCollision.isOn)
+            {
+                rightTleftF = !rightTleftF;
+            }
             int xVector = -1;
             if (rightTleftF)
             {
