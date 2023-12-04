@@ -123,20 +123,20 @@ public class Player : MonoBehaviour
     {
 
         int layerMask = LayerMask.GetMask("Ladder");
-        Vector3 rayPos = transform.position - new Vector3(-0.7f, transform.lossyScale.y / 1.0f);
-        Vector3 raySize = new Vector3(transform.lossyScale.x - 0.85f, 1.0f);
-        RaycastHit2D rayHit = Physics2D.BoxCast(rayPos, raySize, 0.0f, Vector2.zero, 0.0f, layerMask);
-        if (rayHit.transform == null)
+        //Vector3 rayPos = transform.position - new Vector3(-0.7f, transform.lossyScale.y / 1.0f);
+        //Vector3 raySize = new Vector3(transform.lossyScale.x - 0.85f, 1.0f);
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 2 ,layerMask);
+        if (hitInfo.collider == null)
         {
-            _bladder = true;
+            Debug.Log(hitInfo.collider.name + "‚ª‚ ‚é");
 
-            return;
+            
         }
 
-        if (rayHit.transform.tag == "ladder" && _bladder)
+        /*if (rayHit.transform.tag == "ladder" && _bladder)
         {
             _bladder = false;
-        }
+        }*/
     }
     private void OnDrawGizmos2()
     {
