@@ -2420,7 +2420,7 @@ GameObject:
   - component: {fileID: 411487242}
   - component: {fileID: 411487244}
   m_Layer: 0
-  m_Name: minuteHand
+  m_Name: MinuteHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2487,11 +2487,11 @@ Transform:
   m_GameObject: {fileID: 411487241}
   m_LocalRotation: {x: -0, y: -0, z: 0.40033168, w: 0.91637033}
   m_LocalPosition: {x: 529.75, y: -146, z: 0}
-  m_LocalScale: {x: 21.19, y: 21.19, z: 21.19}
+  m_LocalScale: {x: 21.190002, y: 21.190002, z: 21.19}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1767740550}
-  m_RootOrder: 4
+  m_Father: {fileID: 965920940}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 47.198}
 --- !u!114 &411487244
 MonoBehaviour:
@@ -2500,7 +2500,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411487241}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e143c8e613a8b243a99a275ed4b4275, type: 3}
   m_Name: 
@@ -3385,9 +3385,8 @@ GameObject:
   m_Component:
   - component: {fileID: 780009758}
   - component: {fileID: 780009759}
-  - component: {fileID: 780009760}
   m_Layer: 0
-  m_Name: hourHand
+  m_Name: HourHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3405,8 +3404,8 @@ Transform:
   m_LocalScale: {x: 22.672428, y: 22.672428, z: 22.672428}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1767740550}
-  m_RootOrder: 3
+  m_Father: {fileID: 965920940}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &780009759
 SpriteRenderer:
@@ -3460,18 +3459,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &780009760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780009757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c54759fa006bc74ea91a5cff136c503, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &887659317
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,6 +3733,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &965920939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965920940}
+  - component: {fileID: 965920941}
+  m_Layer: 5
+  m_Name: oclock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &965920940
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965920939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 780009758}
+  - {fileID: 411487243}
+  m_Father: {fileID: 1767740550}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &965920941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965920939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16fc7ec8a6e48b4a9f4020fe3788696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerHour: 10
+  centerMinute: 0
+  hourHandSpeed: 30
+  minuteHandSpeed: 6
 --- !u!1 &1064000360
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,8 +5326,7 @@ RectTransform:
   - {fileID: 41645194}
   - {fileID: 2125204527}
   - {fileID: 1236774126}
-  - {fileID: 780009758}
-  - {fileID: 411487243}
+  - {fileID: 965920940}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
