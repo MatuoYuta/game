@@ -359,7 +359,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf0bc2ec22053141be08511fddbb1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warpDestination: {fileID: 0}
+  warpDestination: {fileID: 1064000361}
+  warpKey: 119
+  targetObject: {fileID: 38804493}
 --- !u!50 &38804498
 Rigidbody2D:
   serializedVersion: 4
@@ -3953,6 +3955,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warpDestination: {fileID: 0}
+  warpKey: 119
+  targetObject: {fileID: 0}
 --- !u!1 &1137137149
 GameObject:
   m_ObjectHideFlags: 0
