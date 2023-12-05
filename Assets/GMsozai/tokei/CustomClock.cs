@@ -13,17 +13,31 @@ public class CustomClock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // ’†SŠÔ‚©‚ç‚Ì·•ª‚ğŒvZ
-        int hourDifference = System.DateTime.Now.Hour - centerHour;
-        int minuteDifference = System.DateTime.Now.Minute - centerMinute;
+        int hourDifference = centerHour;
+        int minuteDifference = centerMinute;
 
         // Œv‚Ìj‚ÌŠp“x‚ğŒvZ
         float hourHandAngle = -(hourDifference * hourHandSpeed);
         float minuteHandAngle = -(minuteDifference * minuteHandSpeed);
 
+
+        if (centerMinute % 5 == 0)
+        {
+
+        }
+
         // Œv‚Ìj‚ÌŠp“x‚ğXV
         transform.Find("HourHand").localEulerAngles = new Vector3(0, 0, hourHandAngle);
         transform.Find("MinuteHand").localEulerAngles = new Vector3(0, 0, minuteHandAngle);
+
+        // •ªj‚É˜A“®‚µ‚Äj‚à“®‚­
+        float minuteHandAdjustedAngle = -((minuteDifference / 5) * 2.0f); // Adjust based on minute hand position
+        //float combinedMinuteHandAngle = minuteHandAngle + minuteHandAdjustedAngle;
+        transform.Find("HourHand").localEulerAngles = new Vector3(0, 0, minuteHandAdjustedAngle);
     }
 }
+
+
 

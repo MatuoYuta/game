@@ -3853,8 +3853,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16fc7ec8a6e48b4a9f4020fe3788696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerHour: 10
-  centerMinute: 0
+  centerHour: 0
+  centerMinute: 30
   hourHandSpeed: 30
   minuteHandSpeed: 6
 --- !u!1 &1064000360
