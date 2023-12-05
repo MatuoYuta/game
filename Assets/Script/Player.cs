@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         _Move();
         _LookMoveDirect();
         _HitFloor();
-        _HitLadder();
+        //_HitLadder();
 
     }
 
@@ -138,12 +138,4 @@ public class Player : MonoBehaviour
             _bladder = false;
         }*/
     }
-    private void OnDrawGizmos2()
-    {
-        Gizmos.color = Color.blue; // ギズモの色を赤に設定
-
-        // ボックスキャストのパラメーターをシーンビューに描画
-        Gizmos.DrawWireCube(transform.position - new Vector3(0.0f, transform.lossyScale.y / 1.0f), new Vector3(transform.lossyScale.x - 0.3f, 0.1f));
-    }
-
 }
