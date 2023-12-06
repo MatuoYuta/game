@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         _Move();
         _LookMoveDirect();
         _HitFloor();
-        //_HitLadder();
+        _HitLadder();
 
     }
 
@@ -126,13 +126,17 @@ public class Player : MonoBehaviour
         //Vector3 rayPos = transform.position - new Vector3(-0.7f, transform.lossyScale.y / 1.0f);
         //Vector3 raySize = new Vector3(transform.lossyScale.x - 0.85f, 1.0f);
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 2 ,layerMask);
-        if (hitInfo.collider == null)
+        if (hitInfo.collider != null)
         {
             Debug.Log(hitInfo.collider.name + "‚ª‚ ‚é");
+            _bladder = true;
 
-            
         }
+        else
+        {
+            _bladder = false;
 
+        }
         /*if (rayHit.transform.tag == "ladder" && _bladder)
         {
             _bladder = false;
