@@ -12,12 +12,15 @@ public class Player : MonoBehaviour
     private float _jumpSpeed;
     [SerializeField, Header("’òŽq‚Åã‚é‘¬“x")]
     private float _ladderSpeed;
+    public bool IsLadder;
 
     private bool _bjump;
     private bool _bladder;
     private Animator _anim;
     private Vector2 _inputDirection;
     private Rigidbody2D _rigid;
+    public LayerMask ladderLayer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +41,15 @@ public class Player : MonoBehaviour
         _HitFloor();
         _HitLadder();
 
+        if(Input.GetKey(KeyCode.W) && IsLadder)
+        {
+            _rigid.velocity = new Vector2(_rigid.velocity.x, 3);
+            _rigid.gravityScale = 0;
+        }
+        else
+        {
+            _rigid.gravityScale = 1;
+        }
     }
 
     private void _Move()
@@ -121,25 +133,32 @@ public class Player : MonoBehaviour
 
     private void _HitLadder()
     {
+        int ladderLayer = LayerMask.GetMask("Ladder");
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 2 ,ladderLayer);
+        //if (Move.up)){
+            //_rigid.velocity = new Vector2(_rigid.velocity.x, _inputDirection.y * _ladderSpeed);
 
-        int layerMask = LayerMask.GetMask("Ladder");
-        //Vector3 rayPos = transform.position - new Vector3(-0.7f, transform.lossyScale.y / 1.0f);
-        //Vector3 raySize = new Vector3(transform.lossyScale.x - 0.85f, 1.0f);
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 2 ,layerMask);
-        if (hitInfo.collider != null)
+
+            if (hitInfo.collider != null)
         {
             Debug.Log(hitInfo.collider.name + "‚ª‚ ‚é");
-            _bladder = true;
+            Debug.Log(_inputDirection.y);
+            if (_inputDirection.y > 0)
+            {
+                _bladder = true;
 
-        }
-        else
-        {
-            _bladder = false;
+            }
 
+            if (_bladder)
+            {
+                _rigid.velocity = new Vector2(_rigid.velocity.x, _inputDirection.y * _ladderSpeed);
+                _rigid.gravityScale = 0;
+            }
+            else
+            {
+                _rigid.gravityScale = 1;
+            }
         }
-        /*if (rayHit.transform.tag == "ladder" && _bladder)
-        {
-            _bladder = false;
-        }*/
     }
+    
 }
