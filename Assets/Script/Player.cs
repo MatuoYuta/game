@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         _Move();
         _LookMoveDirect();
@@ -45,10 +45,13 @@ public class Player : MonoBehaviour
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, 3);
             _rigid.gravityScale = 0;
+            IsLadder = true;
         }
         else
         {
+            _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
             _rigid.gravityScale = 1;
+            IsLadder = false;
         }
     }
 
@@ -98,7 +101,6 @@ public class Player : MonoBehaviour
         {
             _bjump = true;
             _anim.SetBool("jump", _bjump);
-            Debug.Log("jump mow");
             return;
         }
 
@@ -135,9 +137,6 @@ public class Player : MonoBehaviour
     {
         int ladderLayer = LayerMask.GetMask("Ladder");
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 2 ,ladderLayer);
-        //if (Move.up)){
-            //_rigid.velocity = new Vector2(_rigid.velocity.x, _inputDirection.y * _ladderSpeed);
-
 
             if (hitInfo.collider != null)
         {
