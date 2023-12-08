@@ -48,10 +48,7 @@ public class Player : MonoBehaviour
         _HitFloor();
         _HitLadder();
 
-<<<<<<< HEAD
-       
-=======
-        if(Input.GetKey(KeyCode.W) && IsLadder)
+        if (Input.GetKey(KeyCode.W) && IsLadder)
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, 3);
             _rigid.gravityScale = 0;
@@ -63,7 +60,6 @@ public class Player : MonoBehaviour
             _rigid.gravityScale = 1;
             IsLadder = false;
         }
->>>>>>> 39dd3a74be5fc9fd7ac26a2f5eb4456cb3e65c01
     }
 
     private void _Move()
@@ -115,12 +111,12 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (rayHit.transform.tag == "floor"  &&_bjump)
+        if (rayHit.transform.tag == "floor" && _bjump)
         {
             _bjump = false;
             _anim.SetBool("jump", _bjump);
         }
-        else if(rayHit.transform.tag == "FallFloor" && _bjump)
+        else if (rayHit.transform.tag == "FallFloor" && _bjump)
         {
             _bjump = false;
             _anim.SetBool("jump", _bjump);
@@ -152,12 +148,11 @@ public class Player : MonoBehaviour
     private void _HitLadder()
     {
         int ladderLayer = LayerMask.GetMask("Ladder");
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 2 ,ladderLayer);
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 2, ladderLayer);
 
-            if (hitInfo.collider != null)
+        if (hitInfo.collider != null)
         {
             Debug.Log(hitInfo.collider.name + "‚ª‚ ‚é");
-<<<<<<< HEAD
             if (Input.GetKey(KeyCode.W) && IsLadder)
             {
                 _rigid.velocity = new Vector2(_rigid.velocity.x, 3);
@@ -169,23 +164,7 @@ public class Player : MonoBehaviour
                 _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
                 _rigid.gravityScale = 1;
                 IsLadder = false;
-=======
-            Debug.Log(_inputDirection.y);
-            if (_inputDirection.y > 0)
-            {
-                _bladder = true;
 
-            }
-
-            if (_bladder)
-            {
-                _rigid.velocity = new Vector2(_rigid.velocity.x, _inputDirection.y * _ladderSpeed);
-                _rigid.gravityScale = 0;
-            }
-            else
-            {
-                _rigid.gravityScale = 1;
->>>>>>> 39dd3a74be5fc9fd7ac26a2f5eb4456cb3e65c01
             }
         }
     }
@@ -229,16 +208,4 @@ public class Player : MonoBehaviour
         }
     }
 
-<<<<<<< HEAD
 }
-//a
-
-=======
-<<<<<<< HEAD
-}
-=======
-}
-//a
-
->>>>>>> 82b78602245ff1fcaa4c0d183836aa5e786c9b64
->>>>>>> 39dd3a74be5fc9fd7ac26a2f5eb4456cb3e65c01
