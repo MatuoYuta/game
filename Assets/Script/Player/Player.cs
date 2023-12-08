@@ -48,18 +48,7 @@ public class Player : MonoBehaviour
         _HitFloor();
         _HitLadder();
 
-        if(Input.GetKey(KeyCode.W) && IsLadder)
-        {
-            _rigid.velocity = new Vector2(_rigid.velocity.x, 3);
-            _rigid.gravityScale = 0;
-            IsLadder = true;
-        }
-        else
-        {
-            _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
-            _rigid.gravityScale = 1;
-            IsLadder = false;
-        }
+       
     }
 
     private void _Move()
@@ -153,21 +142,17 @@ public class Player : MonoBehaviour
             if (hitInfo.collider != null)
         {
             Debug.Log(hitInfo.collider.name + "‚ª‚ ‚é");
-            Debug.Log(_inputDirection.y);
-            if (_inputDirection.y > 0)
+            if (Input.GetKey(KeyCode.W) && IsLadder)
             {
-                _bladder = true;
-
-            }
-
-            if (_bladder)
-            {
-                _rigid.velocity = new Vector2(_rigid.velocity.x, _inputDirection.y * _ladderSpeed);
+                _rigid.velocity = new Vector2(_rigid.velocity.x, 3);
                 _rigid.gravityScale = 0;
+                IsLadder = true;
             }
             else
             {
+                _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
                 _rigid.gravityScale = 1;
+                IsLadder = false;
             }
         }
     }
