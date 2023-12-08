@@ -211,4 +211,10 @@ public class Player : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+//a
+
+>>>>>>> 82b78602245ff1fcaa4c0d183836aa5e786c9b64

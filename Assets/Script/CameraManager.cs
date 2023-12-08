@@ -22,8 +22,10 @@ public class CameraManager : MonoBehaviour
     }
     private void _FollowPlayer()
     {
+        float y = _player.transform.position.y;
         float x = _player.transform.position.x;
         x = Mathf.Clamp(x, _initPos.x, Mathf.Infinity);
-        transform.position = new Vector3(x, transform.position.y, transform.position.z);
+        y = Mathf.Clamp(y, _initPos.y, Mathf.Infinity);
+        transform.position = new Vector3(x,y, transform.position.z);
     }
 }
