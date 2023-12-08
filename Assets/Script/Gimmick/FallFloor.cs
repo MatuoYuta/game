@@ -7,6 +7,7 @@ public class FallFloor : MonoBehaviour
 
     bool floor_touch; //床に触れたかの判定
     public float downSpeed; //落ちるスピード
+    public float downsecond; //落ちるまでの秒数
     float fallCount; //床が落ちるまでの時間
     Rigidbody2D rb; //Rigidbodyの宣言
 
@@ -46,7 +47,7 @@ public class FallFloor : MonoBehaviour
     void DownStart()
     {
         //fallCountが何秒かたったら
-        if (fallCount >= 3.0f)
+        if (fallCount >= downsecond)
         {
             transform.Translate(0, downSpeed, 0); //Y座標をdownSpeedずつ変える。
         }

@@ -13,6 +13,12 @@ public class Player : MonoBehaviour
     [SerializeField, Header("梯子で上る速度")]
     private float _ladderSpeed;
     public bool IsLadder;
+    [Header("踏みつけ判定の高さの割合(%)")] public float stepOnRate;
+
+    #region//プライベート変数
+    private string fallFloorTag = "FallFloor";
+    private CapsuleCollider2D capcol = null;
+    #endregion
 
     private bool _bjump;
     private bool _bladder;
@@ -27,6 +33,7 @@ public class Player : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         _rigid = GetComponent<Rigidbody2D>();
+        capcol = GetComponent<CapsuleCollider2D>();
         _bjump = false;
         _bladder = false;
         _anim = GetComponent<Animator>();
@@ -94,7 +101,7 @@ public class Player : MonoBehaviour
     private void _HitFloor()
     {
         int layerMask = LayerMask.GetMask("Floor");
-        Vector3 rayPos = transform.position - new Vector3(0.0f, transform.lossyScale.y / 0.63f);
+        Vector3 rayPos = transform.position - new Vector3(0.0f, transform.lossyScale.y / 0.65f);
         Vector3 raySize = new Vector3(transform.lossyScale.x - 0.3f, 0.1f);
         RaycastHit2D rayHit = Physics2D.BoxCast(rayPos, raySize, 0.0f, Vector2.zero, 0.0f, layerMask);
         if (rayHit.transform == null)
@@ -104,7 +111,12 @@ public class Player : MonoBehaviour
             return;
         }
 
-        if (rayHit.transform.tag == "floor" && _bjump)
+        if (rayHit.transform.tag == "floor"  &&_bjump)
+        {
+            _bjump = false;
+            _anim.SetBool("jump", _bjump);
+        }
+        else if(rayHit.transform.tag == "FallFloor" && _bjump)
         {
             _bjump = false;
             _anim.SetBool("jump", _bjump);
@@ -123,7 +135,7 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.red; // ギズモの色を赤に設定
 
         // ボックスキャストのパラメーターをシーンビューに描画
-        Gizmos.DrawWireCube(transform.position - new Vector3(-0.7f, transform.lossyScale.y / 1.0f), new Vector3(transform.lossyScale.x - 0.85f, 1.0f));
+        Gizmos.DrawWireCube(transform.position - new Vector3(0.0f, transform.lossyScale.y / 0.65f), new Vector3(transform.lossyScale.x - 0.3f, 0.1f));
     }
 
     public void _OnLadder(InputAction.CallbackContext context)
@@ -159,5 +171,44 @@ public class Player : MonoBehaviour
             }
         }
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //bool enemy = (collision.collider.tag == enemyTag);
+        //bool moveFloor = (collision.collider.tag == moveFloorTag);
+        bool fallFloor = (collision.collider.tag == fallFloorTag);
+
+        if (fallFloor)
+        {
+            //踏みつけ判定になる高さ
+            float stepOnHeight = (capcol.size.y * (stepOnRate / 100f));
+
+            //踏みつけ判定のワールド座標
+            float judgePos = transform.position.y - (capcol.size.y / 2f) + stepOnHeight;
+
+            foreach (ContactPoint2D p in collision.contacts)
+            {
+                if (p.point.y < judgePos)
+                {
+                    if (fallFloor)
+                    {
+                        ObjectCollision o = collision.gameObject.GetComponent<ObjectCollision>();
+                        if (o != null)
+                        {
+                            if (fallFloor)
+                            {
+                                o.playerStepOn = true;
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log("ObjectCollisionが付いてないよ!");
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
 }

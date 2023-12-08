@@ -8,7 +8,6 @@ public class ObjectCollision : MonoBehaviour
 
 	/// <summary>
 	/// このオブジェクトをプレイヤーが踏んだかどうか
-	/// 
 	/// </summary>
 	[HideInInspector] public bool playerStepOn;
 }
