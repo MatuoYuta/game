@@ -46,19 +46,17 @@ public class Player : MonoBehaviour
         _Move();
         _LookMoveDirect();
         _HitFloor();
-        _HitLadder();
+        //_HitLadder();
 
         if (Input.GetKey(KeyCode.W) && IsLadder)
         {
-            _rigid.velocity = new Vector2(_rigid.velocity.x, 3);
-            _rigid.gravityScale = 0;
-            IsLadder = true;
+            _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y) * _ladderSpeed;
+            _rigid.isKinematic = true;
         }
         else
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
-            _rigid.gravityScale = 1;
-            IsLadder = false;
+            _rigid.isKinematic = false;
         }
     }
 
@@ -122,14 +120,23 @@ public class Player : MonoBehaviour
             _anim.SetBool("jump", _bjump);
         }
     }
-    /*private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "floor")
+        if(collision.gameObject.tag == "ladder")
         {
-            _bjump = false;
-            _anim.SetBool("jump", _bjump);
+            IsLadder = true;
         }
-    }*/
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "ladder")
+        {
+            IsLadder = false;
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red; // ÉMÉYÉÇÇÃêFÇê‘Ç…ê›íË
@@ -145,7 +152,7 @@ public class Player : MonoBehaviour
 
     }
 
-    private void _HitLadder()
+    /*private void _HitLadder()
     {
         int ladderLayer = LayerMask.GetMask("Ladder");
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 2, ladderLayer);
@@ -167,7 +174,7 @@ public class Player : MonoBehaviour
 
             }
         }
-    }
+    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

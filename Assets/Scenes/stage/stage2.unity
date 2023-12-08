@@ -11398,8 +11398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movespeed: 10
   _jumpSpeed: 5
-  _ladderSpeed: 6
-  IsLadder: 0
+  _ladderSpeed: 1
+  IsLadder: 1
+  stepOnRate: 0
   ladderLayer:
     serializedVersion: 2
     m_Bits: 512
