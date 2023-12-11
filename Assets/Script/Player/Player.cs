@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W) && IsLadder)
         {
-            _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y) * _ladderSpeed;
+            _rigid.velocity = new Vector2(0, _inputDirection.y) * _ladderSpeed;
             _rigid.isKinematic = true;
         }
         else
