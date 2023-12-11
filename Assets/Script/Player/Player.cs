@@ -127,6 +127,24 @@ public class Player : MonoBehaviour
         {
             IsLadder = true;
         }
+        
+        // 接触したオブジェクトのtag名がEnemyの場合は
+        if (collision.gameObject.tag == "EnemyController")
+        {
+      
+            // Playerオブジェクトがnullでないかチェック
+            if (this.gameObject != null)
+            {
+                // Playerオブジェクトを消去する
+                Destroy(this.gameObject);
+               
+            }
+            else
+            {
+                // デバッグログを出力して状況を確認
+                Debug.Log("Playerオブジェクトが既に破棄されています");
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -214,5 +232,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+
 
 }
