@@ -404,7 +404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77060631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.24, y: -0.66, z: 0}
+  m_LocalPosition: {x: 15.631, y: -0.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8730,6 +8730,22 @@ PrefabInstance:
     - target: {fileID: 2377334375365866383, guid: d46e4d34200700c4083a4bb43143c7dd, type: 3}
       propertyPath: m_Name
       value: MoveFloor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377334375481749368, guid: d46e4d34200700c4083a4bb43143c7dd, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377334375481749373, guid: d46e4d34200700c4083a4bb43143c7dd, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24490678
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377334375481749373, guid: d46e4d34200700c4083a4bb43143c7dd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377334375481749373, guid: d46e4d34200700c4083a4bb43143c7dd, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5724534
       objectReference: {fileID: 0}
     - target: {fileID: 2377334375481749374, guid: d46e4d34200700c4083a4bb43143c7dd, type: 3}
       propertyPath: speed
