@@ -8,6 +8,8 @@ TagManager:
   - EnemyController
   - ladder
   - FallFloor
+  - DeadSpace
+  - MoveFloor
   layers:
   - Default
   - TransparentFX
