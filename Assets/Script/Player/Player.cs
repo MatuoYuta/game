@@ -119,6 +119,11 @@ public class Player : MonoBehaviour
             _bjump = false;
             _anim.SetBool("jump", _bjump);
         }
+        else if (rayHit.transform.tag == "MoveFloor" && _bjump)
+        {
+            _bjump = false;
+            _anim.SetBool("jump", _bjump);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -129,7 +134,7 @@ public class Player : MonoBehaviour
         }
         
         // 接触したオブジェクトのtag名がEnemyの場合は
-        if (collision.gameObject.tag == "EnemyController")
+        if (collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace")
         {
       
             // Playerオブジェクトがnullでないかチェック
