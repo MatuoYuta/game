@@ -9,12 +9,12 @@ public class MovingPlatform : MonoBehaviour
     private void Update()
     {
         // 現在の床の位置が目的地に非常に近い場合
-        if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
+        if(Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
         {
             // 目的地を次のポイントにセットする
             currentWaypointIndex++;
             // 最後まで行ったら、一番最初のポイントを目的地とする
-            if (currentWaypointIndex >= waypoints.Length)
+            if(currentWaypointIndex >= waypoints.Length)
             {
                 currentWaypointIndex = 0;
             }
