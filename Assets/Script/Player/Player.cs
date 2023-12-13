@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
     private Vector2 _inputDirection;
     private Rigidbody2D _rigid;
     public LayerMask ladderLayer;
-
+    float currentMoveSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -60,10 +60,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void _Move()
+    public void _Move()
     {
-        //if (_bjump) return;
-        float currentMoveSpeed = _movespeed;
+        currentMoveSpeed = _movespeed;
         _rigid.velocity = new Vector2(_inputDirection.x * currentMoveSpeed, _rigid.velocity.y);
         _anim.SetBool("run", _inputDirection.x != 0.0f);
 
@@ -91,9 +90,6 @@ public class Player : MonoBehaviour
         if (!context.performed || _bjump) return;
 
         _rigid.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
-        /*_bjump = true;
-        _anim.SetBool("jump", _bjump);*/
-
     }
 
     private void _HitFloor()
@@ -106,6 +102,9 @@ public class Player : MonoBehaviour
         {
             _bjump = true;
             _anim.SetBool("jump", _bjump);
+            _movespeed = 3.0f;
+
+
             return;
         }
 
@@ -123,6 +122,16 @@ public class Player : MonoBehaviour
         {
             _bjump = false;
             _anim.SetBool("jump", _bjump);
+        }
+
+        if (_bjump == true)
+        {
+            _movespeed = 3.0f;
+            Debug.Log(currentMoveSpeed);
+        }
+        else
+        {
+            _movespeed = 8.0f;
         }
     }
 
