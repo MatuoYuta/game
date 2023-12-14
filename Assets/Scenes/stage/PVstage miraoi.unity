@@ -42172,7 +42172,7 @@ GameObject:
   - component: {fileID: 416623163}
   - component: {fileID: 416623162}
   - component: {fileID: 416623161}
-  - component: {fileID: 416623160}
+  - component: {fileID: 416623164}
   m_Layer: 5
   m_Name: Button (kako)
   m_TagString: Untagged
@@ -42201,18 +42201,6 @@ RectTransform:
   m_AnchoredPosition: {x: 300, y: -146}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &416623160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416623158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac42e857da015f449b03e7b868e138f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &416623161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42257,8 +42245,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 416623160}
-        m_TargetAssemblyTypeName: Stage1kako, Assembly-CSharp
+      - m_Target: {fileID: 416623164}
+        m_TargetAssemblyTypeName: PVStagekako, Assembly-CSharp
         m_MethodName: change_button
         m_Mode: 1
         m_Arguments:
@@ -42307,6 +42295,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416623158}
   m_CullTransparentMesh: 1
+--- !u!114 &416623164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416623158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18f4007b831ea94ba4214b4817770ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &422950664
 GameObject:
   m_ObjectHideFlags: 0
@@ -43668,7 +43668,7 @@ GameObject:
   - component: {fileID: 1663646856}
   - component: {fileID: 1663646855}
   - component: {fileID: 1663646854}
-  - component: {fileID: 1663646853}
+  - component: {fileID: 1663646857}
   m_Layer: 5
   m_Name: Button (gendai)
   m_TagString: Untagged
@@ -43697,18 +43697,6 @@ RectTransform:
   m_AnchoredPosition: {x: 300, y: -104.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1663646853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663646851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ac42e857da015f449b03e7b868e138f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1663646854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43753,8 +43741,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1663646853}
-        m_TargetAssemblyTypeName: Stage1kako, Assembly-CSharp
+      - m_Target: {fileID: 1663646857}
+        m_TargetAssemblyTypeName: PVStage, Assembly-CSharp
         m_MethodName: change_button
         m_Mode: 1
         m_Arguments:
@@ -43803,6 +43791,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663646851}
   m_CullTransparentMesh: 1
+--- !u!114 &1663646857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663646851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8c14d46991b564ab5edcbdfd4b0d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1685598808
 PrefabInstance:
   m_ObjectHideFlags: 0
