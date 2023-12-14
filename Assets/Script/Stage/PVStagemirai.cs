@@ -7,6 +7,6 @@ public class PVStagemirai : MonoBehaviour
 {
     public void change_button()
     {
-        SceneManager.LoadScene("PVStagemirai");
+        SceneManager.LoadScene("PVStagemiraoi");
     }
 }

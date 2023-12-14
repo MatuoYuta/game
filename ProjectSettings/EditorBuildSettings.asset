@@ -33,9 +33,9 @@ EditorBuildSettings:
     path: Assets/Scenes/stage/PVstage.unity
     guid: d416711547fb39949bc653b4cc54d9b7
   - enabled: 1
-    path: Assets/Scenes/stage/PVstage miraoi.unity
+    path: Assets/Scenes/stage/PVstagemiraoi.unity
     guid: 8352b961f2f653e4bac9c53e51fd964d
   - enabled: 1
-    path: Assets/Scenes/stage/PVstage kako.unity
+    path: Assets/Scenes/stage/PVstagekako.unity
     guid: f31d14c695aa6534b92a2e916a622e4d
   m_configObjects: {}
