@@ -10,6 +10,7 @@ TagManager:
   - FallFloor
   - DeadSpace
   - MoveFloor
+  - Key
   layers:
   - Default
   - TransparentFX

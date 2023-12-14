@@ -31,9 +31,5 @@ public class CameraManager : MonoBehaviour
             y = Mathf.Clamp(y, _initPos.y, Mathf.Infinity);
             transform.position = new Vector3(x, y, transform.position.z);
         }
-        else
-        {
-            
-        }
     }
 }
