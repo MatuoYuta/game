@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     float currentMoveSpeed;
 
 
-    public bool HasKey = false;
+    public bool HasKey;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         _bjump = false;
         _bladder = false;
         _anim = GetComponent<Animator>();
+        HasKey = false;
 
     }
 

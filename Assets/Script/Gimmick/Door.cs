@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    private Animator anim1;
+
+    private void Awake()
+    {
+        anim1 = GetComponent<Animator>();
+        anim1.SetBool("isOpen", false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Player>().HasKey == true)
+        if (anim1.enabled && collision.GetComponent<Player>().HasKey == true)
         {
             // ƒhƒA‚ğŠJ‚­ˆ—‚ğ‚±‚±‚É’Ç‰Á
+            anim1.SetBool("isOpen", true);
             Debug.Log("Door opened!");
             collision.GetComponent<Player>().HasKey = false;
         } else

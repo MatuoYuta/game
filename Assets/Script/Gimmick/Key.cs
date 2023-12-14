@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Key : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             // プレイヤーがカギを取った場合
-            other.GetComponent<Player>().HasKey = true;
+            collision.GetComponent<Player>().HasKey = true;
             Destroy(gameObject); // カギを削除
-            Debug.Log(other.GetComponent<Player>().HasKey);
+            Debug.Log(collision.GetComponent<Player>().HasKey);
         }
     }
 }
