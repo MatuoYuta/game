@@ -11,6 +11,7 @@ TagManager:
   - DeadSpace
   - MoveFloor
   - Key
+  - toge
   layers:
   - Default
   - TransparentFX

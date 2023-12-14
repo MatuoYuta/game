@@ -147,13 +147,13 @@ public class Player : MonoBehaviour
         }
         
         // 接触したオブジェクトのtag名がEnemyの場合は
-        if (collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace")
+        if (collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace"|| collision.gameObject.tag == "toge")
         {
       
             // Playerオブジェクトがnullでないかチェック
             if (this.gameObject != null)
             {
-                if(collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace")
+                if(collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace" || collision.gameObject.tag == "toge")
                 {
                     // Playerオブジェクトを消去する
                     Destroy(this.gameObject);
