@@ -43249,6 +43249,7 @@ GameObject:
   - component: {fileID: 422950666}
   - component: {fileID: 422950665}
   - component: {fileID: 422950667}
+  - component: {fileID: 422950668}
   m_Layer: 0
   m_Name: gate1 (3)
   m_TagString: Untagged
@@ -43349,6 +43350,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 3.2}
   m_EdgeRadius: 0
+--- !u!95 &422950668
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422950664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0da05d49365ad994bb889981c142540f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &472407608
 GameObject:
   m_ObjectHideFlags: 0
@@ -44345,6 +44367,7 @@ GameObject:
   - component: {fileID: 1350331162}
   - component: {fileID: 1350331165}
   - component: {fileID: 1350331166}
+  - component: {fileID: 1350331167}
   m_Layer: 0
   m_Name: gate1
   m_TagString: Untagged
@@ -44481,6 +44504,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &1350331167
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350331161}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0da05d49365ad994bb889981c142540f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1394847827
 GameObject:
   m_ObjectHideFlags: 0
@@ -44492,6 +44536,7 @@ GameObject:
   - component: {fileID: 1394847829}
   - component: {fileID: 1394847828}
   - component: {fileID: 1394847830}
+  - component: {fileID: 1394847831}
   m_Layer: 0
   m_Name: gate1 (1)
   m_TagString: Untagged
@@ -44592,12 +44637,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 3.2}
   m_EdgeRadius: 0
+<<<<<<< HEAD
 --- !u!1 &1410046755
 GameObject:
+=======
+--- !u!95 &1394847831
+Animator:
+  serializedVersion: 5
+>>>>>>> ff1022be7d1126685c619939d7b1589653580d1b
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1410046760}
@@ -44707,6 +44759,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+=======
+  m_GameObject: {fileID: 1394847827}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0da05d49365ad994bb889981c142540f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+>>>>>>> ff1022be7d1126685c619939d7b1589653580d1b
 --- !u!1 &1438877805
 GameObject:
   m_ObjectHideFlags: 0
@@ -44929,6 +44997,7 @@ GameObject:
   - component: {fileID: 1535896977}
   - component: {fileID: 1535896979}
   - component: {fileID: 1535896978}
+  - component: {fileID: 1535896980}
   m_Layer: 0
   m_Name: gate1 (2)
   m_TagString: Untagged
@@ -45065,12 +45134,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+<<<<<<< HEAD
 --- !u!1 &1602360930
 GameObject:
+=======
+--- !u!95 &1535896980
+Animator:
+  serializedVersion: 5
+>>>>>>> ff1022be7d1126685c619939d7b1589653580d1b
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602360931}
@@ -45212,6 +45288,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602360930}
   m_CullTransparentMesh: 1
+=======
+  m_GameObject: {fileID: 1535896974}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0da05d49365ad994bb889981c142540f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+>>>>>>> ff1022be7d1126685c619939d7b1589653580d1b
 --- !u!1 &1653233812
 GameObject:
   m_ObjectHideFlags: 0
