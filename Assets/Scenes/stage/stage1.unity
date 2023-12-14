@@ -6342,14 +6342,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb573082f1d8be341ad227a0fdf4e26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movespeed: 10
-  _jumpSpeed: 5
+  _movespeed: 8
+  _jumpSpeed: 7
   _ladderSpeed: 0
   IsLadder: 0
   stepOnRate: 0
   ladderLayer:
     serializedVersion: 2
     m_Bits: 0
+  HasKey: 0
 --- !u!114 &413116799
 MonoBehaviour:
   m_ObjectHideFlags: 0
