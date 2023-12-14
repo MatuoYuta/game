@@ -305,9 +305,9 @@ GameObject:
   - component: {fileID: 145609637}
   - component: {fileID: 145609639}
   - component: {fileID: 145609638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12393,6 +12393,7 @@ GameObject:
   - component: {fileID: 2026268243}
   - component: {fileID: 2026268242}
   - component: {fileID: 2026268241}
+  - component: {fileID: 2026268244}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12470,6 +12471,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026268244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026268240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02d894eb0c376947823978c681fe0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2056566381
 GameObject:
   m_ObjectHideFlags: 0
