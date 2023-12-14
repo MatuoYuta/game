@@ -28,9 +28,12 @@ public class Player : MonoBehaviour
     public LayerMask ladderLayer;
     float currentMoveSpeed;
 
+
+    public bool HasKey = false;
+
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         Application.targetFrameRate = 60;
         _rigid = GetComponent<Rigidbody2D>();
         capcol = GetComponent<CapsuleCollider2D>();
@@ -102,7 +105,7 @@ public class Player : MonoBehaviour
         {
             _bjump = true;
             _anim.SetBool("jump", _bjump);
-            _movespeed = 3.0f;
+            //_movespeed = 3.0f;
 
 
             return;
@@ -124,7 +127,7 @@ public class Player : MonoBehaviour
             _anim.SetBool("jump", _bjump);
         }
 
-        if (_bjump == true)
+        /*if (_bjump == true)
         {
             _movespeed = 3.0f;
             Debug.Log(currentMoveSpeed);
@@ -132,7 +135,7 @@ public class Player : MonoBehaviour
         else
         {
             _movespeed = 8.0f;
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -149,9 +152,11 @@ public class Player : MonoBehaviour
             // Playerオブジェクトがnullでないかチェック
             if (this.gameObject != null)
             {
-                // Playerオブジェクトを消去する
-                Destroy(this.gameObject);
-               
+                if(collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace")
+                {
+                    // Playerオブジェクトを消去する
+                    Destroy(this.gameObject);
+                }
             }
             else
             {
