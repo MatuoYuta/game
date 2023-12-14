@@ -56,11 +56,14 @@ public class Player : MonoBehaviour
         {
             _rigid.velocity = new Vector2(0, _inputDirection.y) * _ladderSpeed;
             _rigid.isKinematic = true;
+            _anim.SetBool("ladder", IsLadder);
         }
         else
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
             _rigid.isKinematic = false;
+            _anim.SetBool("ladder", IsLadder);
+
         }
     }
 
@@ -144,8 +147,10 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "ladder")
         {
             IsLadder = true;
+            _anim.SetBool("ladder", IsLadder);
+
         }
-        
+
         // 接触したオブジェクトのtag名がEnemyの場合は
         if (collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace"|| collision.gameObject.tag == "toge")
         {
@@ -172,6 +177,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "ladder")
         {
             IsLadder = false;
+            _anim.SetBool("ladder", IsLadder);
+
         }
     }
 
