@@ -56,15 +56,16 @@ public class Player : MonoBehaviour
         {
             _rigid.velocity = new Vector2(0, _inputDirection.y) * _ladderSpeed;
             _rigid.isKinematic = true;
-            _anim.SetBool("ladder", IsLadder);
+            _anim.SetBool("ladder", _inputDirection.y != 0.0f);
         }
         else
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
             _rigid.isKinematic = false;
-            _anim.SetBool("ladder", IsLadder);
+            //_anim.SetBool("ladder", _inputDirection.x != 0.0f);
 
         }
+
     }
 
     public void _Move()
@@ -108,7 +109,10 @@ public class Player : MonoBehaviour
         if (rayHit.transform == null)
         {
             _bjump = true;
-            _anim.SetBool("jump", _bjump);
+            if(!IsLadder)
+            {
+                _anim.SetBool("jump", _bjump);
+            }
             //_movespeed = 3.0f;
 
 
