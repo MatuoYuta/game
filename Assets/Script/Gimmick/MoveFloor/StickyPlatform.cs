@@ -10,6 +10,7 @@ public class StickyPlatform : MonoBehaviour
         if (collision.gameObject.name == "norun")
         {
             collision.gameObject.transform.SetParent(transform);
+
         }
     }
     // 床の上側コライダーから離れたときに実行
@@ -19,6 +20,8 @@ public class StickyPlatform : MonoBehaviour
         if (collision.gameObject.name == "norun")
         {
             collision.gameObject.transform.SetParent(null);
+            DontDestroyOnLoad(collision.gameObject);
+
         }
     }
 }
