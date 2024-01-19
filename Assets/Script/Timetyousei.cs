@@ -54,7 +54,7 @@ public class Timetyousei : MonoBehaviour
         else
         {
             // ÉQÅ[ÉÄÇí‚é~
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
 
 
             menuzyoutai = true;
