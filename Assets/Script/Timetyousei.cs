@@ -32,6 +32,11 @@ public class Timetyousei : MonoBehaviour
         if (menuzyoutai == true)
         {
 
+            // ゲームを再開
+            Time.timeScale = 1f;
+
+
+
             // メニューを表示
             MenuObject.SetActive(true);
 
@@ -44,6 +49,9 @@ public class Timetyousei : MonoBehaviour
         }
         else
         {
+            // ゲームを停止
+            Time.timeScale = 0f;
+
 
             menuzyoutai = true;
             // メニューを非表示
