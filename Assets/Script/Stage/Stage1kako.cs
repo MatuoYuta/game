@@ -5,19 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class Stage1kako : MonoBehaviour
 {
+    private bool kako;
+    private bool mirai;
+    private bool ima;
+
+    private Animator _anim;
 
     [SerializeField] GameObject clockani;
 
     private void Start()
     {
-        clockani.SetActive(false);
+        _anim = GetComponent<Animator>();
+        kako = false;
+        mirai = false;
+        ima = false;
     }
 
     private void Update()
     {
         void OnClick()
         {
-            clockani.SetActive(true);
+           
             Debug.Log("クリック");
             //Invoke("change_button", 2);
             //change_button();
@@ -31,15 +39,18 @@ public class Stage1kako : MonoBehaviour
 
     void change_button()
     {
+        kako = true;
         clockani.SetActive(true);
         Debug.Log("クリック");
+        _anim.SetBool("ClockGyaku", kako);
         Invoke("stage_change", 2);
         Debug.Log("いんぼーく");
 
     }
-
+    
     void stage_change()
     {
+        kako = false;
         // ゲームを再開
         Time.timeScale = 1f;
         Debug.Log("ボタン");
