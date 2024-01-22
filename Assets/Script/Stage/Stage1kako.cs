@@ -9,13 +9,13 @@ public class Stage1kako : MonoBehaviour
     private bool mirai;
     private bool ima;
 
-    private Animator _anim;
+    public Animator _anim;
 
     [SerializeField] GameObject clockani;
 
     private void Start()
     {
-        _anim = GetComponent<Animator>();
+        _anim = GameObject.Find("clock_A").GetComponent<Animator>();
         kako = false;
         mirai = false;
         ima = false;
@@ -40,7 +40,7 @@ public class Stage1kako : MonoBehaviour
     void change_button()
     {
         kako = true;
-        clockani.SetActive(true);
+        //clockani.SetActive(true);
         Debug.Log("ƒNƒŠƒbƒN");
         _anim.SetBool("ClockGyaku", kako);
         Invoke("stage_change", 2);
