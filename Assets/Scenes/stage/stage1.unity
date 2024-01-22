@@ -6393,7 +6393,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2f1ace9d457dfd145a694fae94b0d3dc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8430,7 +8430,6 @@ GameObject:
   - component: {fileID: 1314686658}
   - component: {fileID: 1314686661}
   - component: {fileID: 1314686660}
-  - component: {fileID: 1314686659}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -8458,19 +8457,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1314686659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314686657}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbeed776a6e6b2741b02007ac58e7fbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MenuObject: {fileID: 0}
 --- !u!114 &1314686660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11091,7 +11077,6 @@ GameObject:
   - component: {fileID: 2038554653}
   - component: {fileID: 2038554652}
   - component: {fileID: 2038554651}
-  - component: {fileID: 2038554650}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -11099,19 +11084,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &2038554650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038554649}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbeed776a6e6b2741b02007ac58e7fbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MenuObject: {fileID: 0}
 --- !u!114 &2038554651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11189,7 +11161,7 @@ RectTransform:
   - {fileID: 1645352356}
   - {fileID: 1751578382}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11309,7 +11281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbeed776a6e6b2741b02007ac58e7fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuObject: {fileID: 0}
+  MenuObject: {fileID: 2038554649}
 --- !u!4 &2084522906
 Transform:
   m_ObjectHideFlags: 0
