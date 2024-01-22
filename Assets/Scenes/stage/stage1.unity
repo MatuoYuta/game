@@ -7640,10 +7640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac42e857da015f449b03e7b868e138f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  _anim: {fileID: 0}
-=======
->>>>>>> f9fc305d01ff5fe997d9da644d65549683322f4d
   clockani: {fileID: 0}
 --- !u!114 &875617568
 MonoBehaviour:
