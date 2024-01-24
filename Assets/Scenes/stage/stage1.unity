@@ -7935,7 +7935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anim: {fileID: 0}
   clockani: {fileID: 0}
-  wait: 0
+  wait: 3.8
 --- !u!114 &875617568
 MonoBehaviour:
   m_ObjectHideFlags: 0
