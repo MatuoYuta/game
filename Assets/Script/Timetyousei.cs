@@ -15,7 +15,7 @@ public class Timetyousei : MonoBehaviour
     {
         MenuObject2.SetActive(false);
         MenuObject3.SetActive(false);
-        MenuObject4.SetActive(false);
+        //MenuObject4.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,7 +48,7 @@ public class Timetyousei : MonoBehaviour
 
             MenuObject3.SetActive(false);
 
-            MenuObject4.SetActive(false);
+            //MenuObject4.SetActive(false);
 
             menuzyoutai = false;
             // マウスカーソルを表示にし、位置固定解除
@@ -69,7 +69,7 @@ public class Timetyousei : MonoBehaviour
 
             MenuObject3.SetActive(true);
 
-            MenuObject4.SetActive(true);
+            //MenuObject4.SetActive(true);
 
             // マウスカーソルを非表示にし、位置を固定
             /*Cursor.visible = false;
