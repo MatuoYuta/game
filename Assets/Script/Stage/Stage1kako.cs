@@ -12,6 +12,9 @@ public class Stage1kako : MonoBehaviour
     public Animator _anim;
 
     [SerializeField] GameObject clockani;
+    [SerializeField, Header("インボーク時間")]
+    float wait;
+
 
     private void Start()
     {
@@ -41,9 +44,9 @@ public class Stage1kako : MonoBehaviour
     {
         kako = true;
         //clockani.SetActive(true);
-        Debug.Log("クリック");
-        _anim.SetBool("ClockGyaku", kako);
-        Invoke("stage_change", 2);
+        Debug.Log("アニメーション"+kako);
+        _anim.SetBool("kako", kako);
+        Invoke("stage_change", wait);
         Debug.Log("いんぼーく");
 
     }

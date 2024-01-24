@@ -7,7 +7,7 @@ public class Timetyousei : MonoBehaviour
     [SerializeField] GameObject MenuObject;
     [SerializeField] GameObject MenuObject2;
     [SerializeField] GameObject MenuObject3;
-    [SerializeField] GameObject MenuObject4;
+    //[SerializeField] GameObject MenuObject4;
 
     bool menuzyoutai;
 
