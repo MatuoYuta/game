@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
         _Move();
         _LookMoveDirect();
         _HitFloor();
+        Sound();
         //_HitLadder();
 
         if (Input.GetKey(KeyCode.W) && IsLadder)
@@ -77,10 +78,17 @@ public class Player : MonoBehaviour
 
     }
 
+    public void Sound()
+    {
+        if(_run == true)
+        {
+            //‰¹(sound1)‚ð–Â‚ç‚·
+            audioSource.PlayOneShot(sound1);
+        }
+    }
+
     public void _Move()
     {
-        //‰¹(sound1)‚ð–Â‚ç‚·
-        audioSource.PlayOneShot(sound1);
 
         currentMoveSpeed = _movespeed;
         _rigid.velocity = new Vector2(_inputDirection.x * currentMoveSpeed, _rigid.velocity.y);
