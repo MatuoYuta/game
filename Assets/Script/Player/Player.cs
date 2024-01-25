@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     [SerializeField, Header("移動速度")]
     private float _movespeed;
     [SerializeField, Header("ジャンプ速度")]
@@ -34,6 +37,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        //Componentを取得
+        audioSource = GetComponent<AudioSource>();
+
         Application.targetFrameRate = 60;
         _rigid = GetComponent<Rigidbody2D>();
         capcol = GetComponent<CapsuleCollider2D>();
@@ -70,6 +76,9 @@ public class Player : MonoBehaviour
 
     public void _Move()
     {
+        //音(sound1)を鳴らす
+        audioSource.PlayOneShot(sound1);
+
         currentMoveSpeed = _movespeed;
         _rigid.velocity = new Vector2(_inputDirection.x * currentMoveSpeed, _rigid.velocity.y);
         _anim.SetBool("run", _inputDirection.x != 0.0f);
