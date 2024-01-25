@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
 
     private bool _bjump;
     private bool _bladder;
+    private bool _run;
     private Animator _anim;
     private Vector2 _inputDirection;
     private Rigidbody2D _rigid;
@@ -47,6 +48,8 @@ public class Player : MonoBehaviour
         _bladder = false;
         _anim = GetComponent<Animator>();
         HasKey = false;
+        _run = false;
+
 
     }
 
@@ -81,7 +84,16 @@ public class Player : MonoBehaviour
 
         currentMoveSpeed = _movespeed;
         _rigid.velocity = new Vector2(_inputDirection.x * currentMoveSpeed, _rigid.velocity.y);
-        _anim.SetBool("run", _inputDirection.x != 0.0f);
+        if(_inputDirection.x != 0.0f)
+        {
+            _run = true;
+        }
+        else
+        {
+            _run = false;
+        }
+        _anim.SetBool("run", _run);
+
 
     }
 
