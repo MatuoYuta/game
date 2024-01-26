@@ -7021,7 +7021,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412465233}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2f1ace9d457dfd145a694fae94b0d3dc, type: 3}
@@ -8910,7 +8910,7 @@ RectTransform:
   m_GameObject: {fileID: 875617565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.385, y: 4.3949, z: 1}
+  m_LocalScale: {x: 2, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1998451462}
@@ -8919,8 +8919,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -86.6, y: -5.4}
-  m_SizeDelta: {x: 28.3603, y: 16.3034}
+  m_AnchoredPosition: {x: -94, y: -5.5}
+  m_SizeDelta: {x: 17, y: 11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &875617567
 MonoBehaviour:
@@ -11231,7 +11231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8584906, g: 0.3514952, b: 0.3514952, a: 0.38431373}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11778,7 +11778,7 @@ RectTransform:
   m_GameObject: {fileID: 1708066177}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1125, y: 3.5743752, z: 1}
+  m_LocalScale: {x: 2, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1957413392}
@@ -11787,8 +11787,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62.6, y: -5.1}
-  m_SizeDelta: {x: 33.1734, y: 21.0123}
+  m_AnchoredPosition: {x: 62.2, y: 0}
+  m_SizeDelta: {x: 17, y: 11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1708066179
 MonoBehaviour:
@@ -12397,7 +12397,7 @@ RectTransform:
   m_GameObject: {fileID: 1846720010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3874, y: 3.57, z: 1}
+  m_LocalScale: {x: 2, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 920668159}
@@ -12406,8 +12406,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.6, y: 71.2}
-  m_SizeDelta: {x: 32.4026, y: 21.1799}
+  m_AnchoredPosition: {x: -23.5, y: 75}
+  m_SizeDelta: {x: 17, y: 11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1846720012
 MonoBehaviour:
