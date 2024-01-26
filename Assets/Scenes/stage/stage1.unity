@@ -7622,7 +7622,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-<<<<<<< HEAD
 --- !u!1 &446430440
 GameObject:
   m_ObjectHideFlags: 0
@@ -7787,8 +7786,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-=======
->>>>>>> 1cd3b5bbc2ed59084361d2ceefdb0330415d91ae
 --- !u!1 &472339462
 GameObject:
   m_ObjectHideFlags: 0
