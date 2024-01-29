@@ -11511,13 +11511,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330289889}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89455b26df8bee3418eb37ff5ce01729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MenuObject: {fileID: 224406624}
   MenuObject2: {fileID: 0}
+  MenuObject3: {fileID: 0}
 --- !u!4 &1330289891
 Transform:
   m_ObjectHideFlags: 0
@@ -11649,6 +11650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb573082f1d8be341ad227a0fdf4e26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound1: {fileID: 0}
   _movespeed: 8
   _jumpSpeed: 5
   _ladderSpeed: 3
