@@ -58,7 +58,7 @@ public class Door : MonoBehaviour
         open = true;
         // �h�A���J�������������ɒǉ�
         //anim1.SetBool("isOpen", true);
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             this.gameObject.transform.position = new Vector2(x, y + i);
             yield return new WaitForSeconds(0.1f);
