@@ -11755,7 +11755,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.8125}
   m_EdgeRadius: 0
-<<<<<<< HEAD
 --- !u!1 &175894261
 GameObject:
   m_ObjectHideFlags: 0
@@ -11920,8 +11919,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186492607}
   m_CullTransparentMesh: 1
-=======
->>>>>>> 591a89cbef70ff11b6592d7553f534c8c55e6986
 --- !u!1 &194194293
 GameObject:
   m_ObjectHideFlags: 0
@@ -17878,7 +17875,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429686491}
   m_CullTransparentMesh: 1
-<<<<<<< HEAD
 --- !u!1 &1476322660
 GameObject:
   m_ObjectHideFlags: 0
@@ -18043,8 +18039,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-=======
->>>>>>> 591a89cbef70ff11b6592d7553f534c8c55e6986
 --- !u!1 &1516266775
 GameObject:
   m_ObjectHideFlags: 0
@@ -18628,7 +18622,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.8125}
   m_EdgeRadius: 0
-<<<<<<< HEAD
 --- !u!1 &1615638023
 GameObject:
   m_ObjectHideFlags: 0
@@ -18808,8 +18801,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _parallaxEffect: 0.7
-=======
->>>>>>> 591a89cbef70ff11b6592d7553f534c8c55e6986
 --- !u!1 &1645352355
 GameObject:
   m_ObjectHideFlags: 0
