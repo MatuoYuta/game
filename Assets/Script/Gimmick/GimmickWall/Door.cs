@@ -43,31 +43,20 @@ public class Door : MonoBehaviour
     {
         if (collision.GetComponent<Player>().HasKey == true)
         {
-<<<<<<< HEAD
-            // ƒhƒA‚ğŠJ‚­ˆ—‚ğ‚±‚±‚É’Ç‰Á
-            //anim1.SetBool("isOpen", true);
-            
-            for(int i = 1;i<=10; i++)
-            {
-                this.gameObject.transform.position = new Vector2(x, y * i);
-            }
-            
-=======
             StartCoroutine("Door_up");
->>>>>>> a652afe5780f8cdf4df0b5445b868f82b3ca4863
             Debug.Log("Door opened!");
             collision.GetComponent<Player>().HasKey = false;
 
         } else
         {
-            Debug.Log("ƒJƒM‚ª‚È‚¢‚æ");
+            Debug.Log("ï¿½Jï¿½Mï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½");
         }
     }
 
     IEnumerator Door_up()
     {
         open = true;
-        // ƒhƒA‚ğŠJ‚­ˆ—‚ğ‚±‚±‚É’Ç‰Á
+        // ï¿½hï¿½Aï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É’Ç‰ï¿½
         //anim1.SetBool("isOpen", true);
         for (int i = 0; i < 10; i++)
         {
