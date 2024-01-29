@@ -25,7 +25,12 @@ public class Door : MonoBehaviour
         {
             // ƒhƒA‚ğŠJ‚­ˆ—‚ğ‚±‚±‚É’Ç‰Á
             //anim1.SetBool("isOpen", true);
-            this.gameObject.transform.position = new Vector2(x, y * 10);
+            
+            for(int i = 1;i<=10; i++)
+            {
+                this.gameObject.transform.position = new Vector2(x, y * i);
+            }
+            
             Debug.Log("Door opened!");
             collision.GetComponent<Player>().HasKey = false;
 
