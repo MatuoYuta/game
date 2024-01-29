@@ -23,6 +23,11 @@ public class Ladder : MonoBehaviour
             Debug.Log("ƒvƒŒƒCƒ„[‚Æ");
             collision.GetComponent<Player>().IsLadder = true;
         }
-        
+        else
+        {
+            collision.GetComponent<Player>().IsLadder = false;
+
+        }
+
     }
 }

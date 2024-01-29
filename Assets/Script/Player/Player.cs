@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         _anim = GetComponent<Animator>();
         HasKey = false;
         _run = false;
-
+        IsLadder = false;
 
     }
 
@@ -62,17 +62,18 @@ public class Player : MonoBehaviour
         //Sound();
         //_HitLadder();
 
-        if (Input.GetKey(KeyCode.W) && IsLadder)
+        if (Input.GetKey(KeyCode.W) && IsLadder && _inputDirection.y != 0.0f)
         {
+
             _rigid.velocity = new Vector2(0, _inputDirection.y) * _ladderSpeed;
-            _rigid.isKinematic = true;
+            _rigid.gravityScale = 0;
             _anim.SetBool("ladder", _inputDirection.y != 0.0f);
         }
         else
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
-            _rigid.isKinematic = false;
-            //_anim.SetBool("ladder", _inputDirection.x != 0.0f);
+            _rigid.gravityScale = 1;
+            //_anim.SetBool("ladder", IsLadder);
 
         }
 
@@ -118,13 +119,15 @@ public class Player : MonoBehaviour
 
     private void _LookMoveDirect()
     {
-        if (_inputDirection.x < 0.0f)
-        {
-            transform.eulerAngles = Vector3.zero;
-        }
-        else if (_inputDirection.x > 0.0f)
-        {
-            transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
+        if(IsLadder == false){
+            if (_inputDirection.x < 0.0f)
+            {
+                transform.eulerAngles = Vector3.zero;
+            }
+            else if (_inputDirection.x > 0.0f)
+            {
+                transform.eulerAngles = new Vector3(0.0f, 180.0f, 0.0f);
+            }
         }
     }
 
