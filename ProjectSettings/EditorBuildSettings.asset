@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StageSelect.unity
     guid: 49c6ddf6cd4204b46b600738bf45fe97
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Option.unity
     guid: 9632b5908b6ea7a47a332a4bd3c0aa3b
   - enabled: 1
@@ -38,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/stage/PVstagekako.unity
     guid: f31d14c695aa6534b92a2e916a622e4d
+  - enabled: 1
+    path: Assets/Scenes/stage/TestTsuchi.unity
+    guid: 850decfd037f46c40b9a2af8146c01cc
+  - enabled: 1
+    path: Assets/Scenes/stage/TestTsuchi 1.unity
+    guid: a4501bb4aac9d7846961a2eef6850249
   m_configObjects: {}
