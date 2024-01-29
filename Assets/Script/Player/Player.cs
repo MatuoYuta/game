@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
 
     public void _Move()
     {
-
+        //_movespeed = 8;
         currentMoveSpeed = _movespeed;
         _rigid.velocity = new Vector2(_inputDirection.x * currentMoveSpeed, _rigid.velocity.y);
         if(_inputDirection.x != 0.0f)
@@ -136,6 +136,7 @@ public class Player : MonoBehaviour
         if (!context.performed || _bjump) return;
 
         _rigid.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+
     }
 
     private void _HitFloor()
@@ -146,6 +147,8 @@ public class Player : MonoBehaviour
         RaycastHit2D rayHit = Physics2D.BoxCast(rayPos, raySize, 0.0f, Vector2.zero, 0.0f, layerMask);
         if (rayHit.transform == null)
         {
+            _movespeed = 3;
+
             _bjump = true;
             if(!IsLadder)
             {
@@ -172,7 +175,7 @@ public class Player : MonoBehaviour
             _bjump = false;
             _anim.SetBool("jump", _bjump);
         }
-
+        _movespeed = 8.0f;
         /*if (_bjump == true)
         {
             _movespeed = 3.0f;
