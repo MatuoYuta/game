@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour
@@ -8,10 +10,28 @@ public class Door : MonoBehaviour
 
     float x;
     float y;
+    float waitsecond = 0.05f;
+
+    bool open = false;
+    [SerializeField] float testY;
     private void Start()
     {
         x = this.gameObject.transform.position.x;
         y = this.gameObject.transform.position.y;
+    }
+
+    void Update()
+    {
+        if (open)
+        {
+            //transform.Translate(0, 0.2f, 0);
+            
+            if (transform.position.y > testY)
+            {
+                open = false;
+            }
+        }
+        //transform.Translate(0, 0.2f, 0);
     }
 
     private void Awake()
@@ -23,15 +43,25 @@ public class Door : MonoBehaviour
     {
         if (collision.GetComponent<Player>().HasKey == true)
         {
-            // ƒhƒA‚ğŠJ‚­ˆ—‚ğ‚±‚±‚É’Ç‰Á
-            //anim1.SetBool("isOpen", true);
-            this.gameObject.transform.position = new Vector2(x, y * 10);
+            StartCoroutine("Door_up");
             Debug.Log("Door opened!");
             collision.GetComponent<Player>().HasKey = false;
 
         } else
         {
-            Debug.Log("ƒJƒM‚ª‚È‚¢‚æ");
+            Debug.Log("ï¿½Jï¿½Mï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½");
+        }
+    }
+
+    IEnumerator Door_up()
+    {
+        open = true;
+        // ï¿½hï¿½Aï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É’Ç‰ï¿½
+        //anim1.SetBool("isOpen", true);
+        for (int i = 0; i < 10; i++)
+        {
+            this.gameObject.transform.position = new Vector2(x, y + i);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }
