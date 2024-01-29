@@ -49,14 +49,14 @@ public class Door : MonoBehaviour
 
         } else
         {
-            Debug.Log("ƒJƒM‚ª‚È‚¢‚æ");
+            Debug.Log("ï¿½Jï¿½Mï¿½ï¿½ï¿½È‚ï¿½ï¿½ï¿½");
         }
     }
 
     IEnumerator Door_up()
     {
         open = true;
-        // ƒhƒA‚ğŠJ‚­ˆ—‚ğ‚±‚±‚É’Ç‰Á
+        // ï¿½hï¿½Aï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É’Ç‰ï¿½
         //anim1.SetBool("isOpen", true);
         for (int i = 0; i < 10; i++)
         {
