@@ -220,7 +220,9 @@ public class Player : MonoBehaviour
                 if(collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace" || collision.gameObject.tag == "toge")
                 {
                     // Playerオブジェクトを消去する
-                    Destroy(this.gameObject);
+                    //Destroy(this.gameObject);
+                    myTransform.position = new Vector3(0, -1.45f, 0);
+
                 }
             }
             else
