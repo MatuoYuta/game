@@ -37,8 +37,13 @@ public class Player : MonoBehaviour
 
     Vector3 pos;
     Transform myTransform;
-    [SerializeField] GameObject TCanvasObject;
+    
     [SerializeField] GameObject TCanvas2Object;
+    [SerializeField] GameObject clockObject;
+    [SerializeField] GameObject TCanvas;
+    [SerializeField] GameObject TCanvas_ima;
+    [SerializeField] GameObject TCanvas_mirai;
+    [SerializeField] GameObject TCanvas_kako;
 
     // Start is called before the first frame update
     void Start()
@@ -327,10 +332,15 @@ public class Player : MonoBehaviour
         Debug.Log("TestÇ±ÇÈÅ[ÇøÇÒ");
         yield return new WaitForSeconds(3.0f);
         Debug.Log("3ïbÇΩÇ¡ÇΩÇ∫");
-        myTransform.position = new Vector3(pos.x, pos.y, pos.z);
+        myTransform.position += new Vector3(pos.x, pos.y, pos.z);
         Time.timeScale = 1f;
         Stage01.kako = false;
-        TCanvasObject.SetActive(true);
+        TCanvas.SetActive(true);
+        TCanvas_ima.SetActive(false);
+        TCanvas_kako.SetActive(true);
+        TCanvas_mirai.SetActive(false);
         TCanvas2Object.SetActive(false);
+        clockObject.SetActive(false);
+
     }
 }
