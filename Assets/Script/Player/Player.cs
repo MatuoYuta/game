@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject TCanvas_ima;
     [SerializeField] GameObject TCanvas_mirai;
     [SerializeField] GameObject TCanvas_kako;
+    [SerializeField] GameObject Button_kako;
+    [SerializeField] GameObject Button_ima;
+    [SerializeField] GameObject Button_mirai;
 
     // Start is called before the first frame update
     void Start()
@@ -389,7 +392,9 @@ public class Player : MonoBehaviour
         TCanvas_mirai.SetActive(false);
         TCanvas2Object.SetActive(false);
         clockObject.SetActive(false);
-
+        Button_kako.SetActive(false);
+        Button_ima.SetActive(true);
+        Button_mirai.SetActive(true);
     }
 
     IEnumerator Change_time_ima()
@@ -408,7 +413,9 @@ public class Player : MonoBehaviour
         TCanvas_mirai.SetActive(false);
         TCanvas2Object.SetActive(false);
         clockObject.SetActive(false);
-
+        Button_kako.SetActive(true);
+        Button_ima.SetActive(false);
+        Button_mirai.SetActive(true);
     }
 
     IEnumerator Change_time_mirai()
@@ -427,6 +434,8 @@ public class Player : MonoBehaviour
         TCanvas_mirai.SetActive(true);
         TCanvas2Object.SetActive(false);
         clockObject.SetActive(false);
-
+        Button_kako.SetActive(true);
+        Button_ima.SetActive(true);
+        Button_mirai.SetActive(false);
     }
 }

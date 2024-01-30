@@ -621,6 +621,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6234079768858691936, guid: db2cb6c503e036e4fa9552226c8a1b26, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6234079768858691937, guid: db2cb6c503e036e4fa9552226c8a1b26, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -15
@@ -1729,7 +1733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _anim: {fileID: 0}
-  targetObj: {fileID: 0}
+  targetObj: {fileID: 1113102256}
   clockani: {fileID: 0}
 --- !u!1001 &1433242321
 PrefabInstance:
@@ -8388,6 +8392,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 97858236}
     - target: {fileID: 4143655805918826863, guid: 06524588b9d84cf4086cd7648218cccd, type: 3}
+      propertyPath: Button_ima
+      value: 
+      objectReference: {fileID: 663779171}
+    - target: {fileID: 4143655805918826863, guid: 06524588b9d84cf4086cd7648218cccd, type: 3}
+      propertyPath: Button_kako
+      value: 
+      objectReference: {fileID: 1153920053}
+    - target: {fileID: 4143655805918826863, guid: 06524588b9d84cf4086cd7648218cccd, type: 3}
       propertyPath: TCanvas_ima
       value: 
       objectReference: {fileID: 1690128317}
@@ -8395,6 +8407,10 @@ PrefabInstance:
       propertyPath: clockObject
       value: 
       objectReference: {fileID: 121520437}
+    - target: {fileID: 4143655805918826863, guid: 06524588b9d84cf4086cd7648218cccd, type: 3}
+      propertyPath: Button_mirai
+      value: 
+      objectReference: {fileID: 1316583100}
     - target: {fileID: 4143655805918826863, guid: 06524588b9d84cf4086cd7648218cccd, type: 3}
       propertyPath: TCanvas_kako
       value: 
