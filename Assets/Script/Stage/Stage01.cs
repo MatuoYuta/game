@@ -34,7 +34,7 @@ public class Stage01 : MonoBehaviour
     {
 
         kako = true;
-        targetObj.GetComponent<Player>().ChangeStage();
+        targetObj.GetComponent<Player>().ChangeStage_kako();
         Debug.Log("button");
 
         Debug.Log("アニメーション" + kako);
@@ -42,5 +42,28 @@ public class Stage01 : MonoBehaviour
         
     }
 
-    
+    public void Go_ima()
+    {
+
+        ima = true;
+        targetObj.GetComponent<Player>().ChangeStage_ima();
+        Debug.Log("button");
+
+        Debug.Log("アニメーション" + ima);
+        _anim.SetBool("ima", ima);
+
+    }
+
+    public void Go_mirai()
+    {
+
+        ima = true;
+        targetObj.GetComponent<Player>().ChangeStage_mirai();
+        Debug.Log("button");
+
+        Debug.Log("アニメーション" + ima);
+        _anim.SetBool("ima", ima);
+
+    }
+
 }

@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
 
     Vector3 pos;
     Transform myTransform;
+    bool now_kako;
+    bool now_mirai;
     
     [SerializeField] GameObject TCanvas2Object;
     [SerializeField] GameObject clockObject;
@@ -63,6 +65,8 @@ public class Player : MonoBehaviour
         pos.x = 0;
         pos.y = 0;
         pos.z = 0;
+        now_kako = false;
+        now_mirai = false;
     }
 
     // Update is called once per frame
@@ -321,26 +325,106 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ChangeStage()
+    public void ChangeStage_kako()
     {
        
-        StartCoroutine("Change_time");
-        pos.x = 500;
+        StartCoroutine("Change_time_kako");
+        if (now_mirai)
+        {
+            pos.x = 1000;
+        }
+        else
+        {
+            pos.x = 500;
+        }
+        
         
     }
 
-    IEnumerator Change_time()
+    public void ChangeStage_ima()
+    {
+
+        StartCoroutine("Change_time_ima");
+        if (now_mirai)
+        {
+            pos.x = 500;
+        }
+        else
+        {
+            pos.x = -500;
+        }
+        
+
+    }
+
+    public void ChangeStage_mirai()
+    {
+
+        StartCoroutine("Change_time_mirai");
+        if (now_kako)
+        {
+            pos.x = -1000;
+        }
+        else
+        {
+            pos.x = -500;
+        }
+        
+
+    }
+
+    IEnumerator Change_time_kako()
     {
         Debug.Log("TestÇ±ÇÈÅ[ÇøÇÒ");
         yield return new WaitForSeconds(3.0f);
         Debug.Log("3ïbÇΩÇ¡ÇΩÇ∫");
         myTransform.position += new Vector3(pos.x, pos.y, pos.z);
         Time.timeScale = 1f;
+        now_kako = true;
+        now_mirai = false;
         Stage01.kako = false;
         TCanvas.SetActive(true);
         TCanvas_ima.SetActive(false);
         TCanvas_kako.SetActive(true);
         TCanvas_mirai.SetActive(false);
+        TCanvas2Object.SetActive(false);
+        clockObject.SetActive(false);
+
+    }
+
+    IEnumerator Change_time_ima()
+    {
+        Debug.Log("TestÇ±ÇÈÅ[ÇøÇÒ");
+        yield return new WaitForSeconds(3.0f);
+        Debug.Log("3ïbÇΩÇ¡ÇΩÇ∫");
+        myTransform.position += new Vector3(pos.x, pos.y, pos.z);
+        Time.timeScale = 1f;
+        now_kako = false;
+        now_mirai = false;
+        Stage01.kako = false;
+        TCanvas.SetActive(true);
+        TCanvas_ima.SetActive(true);
+        TCanvas_kako.SetActive(false);
+        TCanvas_mirai.SetActive(false);
+        TCanvas2Object.SetActive(false);
+        clockObject.SetActive(false);
+
+    }
+
+    IEnumerator Change_time_mirai()
+    {
+        Debug.Log("TestÇ±ÇÈÅ[ÇøÇÒ");
+        yield return new WaitForSeconds(3.0f);
+        Debug.Log("3ïbÇΩÇ¡ÇΩÇ∫");
+        myTransform.position += new Vector3(pos.x, pos.y, pos.z);
+        Time.timeScale = 1f;
+        now_kako = false;
+        now_mirai = true;
+        Stage01.kako = false;
+        TCanvas.SetActive(true);
+        TCanvas_ima.SetActive(false);
+        TCanvas_kako.SetActive(false);
+        TCanvas_mirai.SetActive(true);
         TCanvas2Object.SetActive(false);
         clockObject.SetActive(false);
 
