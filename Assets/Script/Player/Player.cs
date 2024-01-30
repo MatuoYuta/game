@@ -35,6 +35,11 @@ public class Player : MonoBehaviour
 
     public bool HasKey;
 
+    Vector3 pos;
+    Transform myTransform;
+    [SerializeField] GameObject TCanvasObject;
+    [SerializeField] GameObject TCanvas2Object;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -50,15 +55,19 @@ public class Player : MonoBehaviour
         HasKey = false;
         _run = false;
         IsLadder = false;
-
+        pos.x = 0;
+        pos.y = 0;
+        pos.z = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        myTransform = this.transform;
         _Move();
         _LookMoveDirect();
         _HitFloor();
+        //ChangeStage();
         //Sound();
         //_HitLadder();
 
@@ -112,7 +121,7 @@ public class Player : MonoBehaviour
         if (_run == true)
         {
             //âπ(sound1)Çñ¬ÇÁÇ∑
-            audioSource.PlayOneShot(sound1);
+            //audioSource.PlayOneShot(sound1);
         }
 
     }
@@ -305,6 +314,23 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void ChangeStage()
+    {
+       
+        StartCoroutine("Change_time");
+        pos.x = 500;
+        
+    }
 
-
+    IEnumerator Change_time()
+    {
+        Debug.Log("TestÇ±ÇÈÅ[ÇøÇÒ");
+        yield return new WaitForSeconds(3.0f);
+        Debug.Log("3ïbÇΩÇ¡ÇΩÇ∫");
+        myTransform.position = new Vector3(pos.x, pos.y, pos.z);
+        Time.timeScale = 1f;
+        Stage01.kako = false;
+        TCanvasObject.SetActive(true);
+        TCanvas2Object.SetActive(false);
+    }
 }

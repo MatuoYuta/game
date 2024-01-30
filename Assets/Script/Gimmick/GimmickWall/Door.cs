@@ -49,7 +49,7 @@ public class Door : MonoBehaviour
 
         } else
         {
-            Debug.Log("�J�M���Ȃ���");
+            //Debug.Log("�J�M���Ȃ���");
         }
     }
 
@@ -63,6 +63,7 @@ public class Door : MonoBehaviour
             this.gameObject.transform.position = new Vector2(x, y + i);
             yield return new WaitForSeconds(0.1f);
         }
+
     }
 }
 
