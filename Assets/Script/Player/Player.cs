@@ -39,7 +39,11 @@ public class Player : MonoBehaviour
     Transform myTransform;
     bool now_kako;
     bool now_mirai;
-    
+
+    GameObject CAMERA;
+    int flag = 0;
+    public GameObject aka;
+
     [SerializeField] GameObject TCanvas2Object;
     [SerializeField] GameObject clockObject;
     [SerializeField] GameObject TCanvas;
@@ -70,6 +74,7 @@ public class Player : MonoBehaviour
         pos.z = 0;
         now_kako = false;
         now_mirai = false;
+        CAMERA = GameObject.Find("Main Camera");
     }
 
     // Update is called once per frame
@@ -79,6 +84,7 @@ public class Player : MonoBehaviour
         _Move();
         _LookMoveDirect();
         _HitFloor();
+        Shake();
         //ChangeStage();
         //Sound();
         //_HitLadder();
@@ -220,6 +226,7 @@ public class Player : MonoBehaviour
         // 接触したオブジェクトのtag名がEnemyの場合は
         if (collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace"|| collision.gameObject.tag == "toge")
         {
+            flag = 1;
       
             // Playerオブジェクトがnullでないかチェック
             if (this.gameObject != null)
@@ -372,8 +379,40 @@ public class Player : MonoBehaviour
         {
             pos.x = -500;
         }
-        
+    }
 
+    public void Shake()
+    {
+        switch (flag)
+        {
+            case 1:
+                aka.SetActive(true);
+                goto case 3;
+            case 3:
+                CAMERA.transform.Translate(30 * Time.deltaTime, 0, 0);
+                if (CAMERA.transform.position.x >= 1.0f)
+                    Debug.Log("ケース３");
+                    flag++; 
+
+                break;
+            case 2:
+                CAMERA.transform.Translate(-30 * Time.deltaTime, 0, 0);
+                if (CAMERA.transform.position.x <= -1.0f)
+                    Debug.Log("ケース2");
+                flag++; //aka.SetActive(false);
+                break;
+            case 4:
+                CAMERA.transform.Translate(-30 * Time.deltaTime, 0, 0);
+                if (CAMERA.transform.position.x <= 0)
+                {
+                    Debug.Log("ケース4");
+
+                    flag = 0;
+                    aka.SetActive(false);
+                }
+
+                break;
+        }
     }
 
     IEnumerator Change_time_kako()

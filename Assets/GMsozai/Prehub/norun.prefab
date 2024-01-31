@@ -213,6 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb573082f1d8be341ad227a0fdf4e26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound1: {fileID: 0}
   _movespeed: 10
   _jumpSpeed: 7
   _ladderSpeed: 0
@@ -222,6 +223,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   HasKey: 0
+  aka: {fileID: 0}
+  TCanvas2Object: {fileID: 0}
+  clockObject: {fileID: 0}
+  TCanvas: {fileID: 0}
+  TCanvas_ima: {fileID: 0}
+  TCanvas_mirai: {fileID: 0}
+  TCanvas_kako: {fileID: 0}
+  Button_kako: {fileID: 0}
+  Button_ima: {fileID: 0}
+  Button_mirai: {fileID: 0}
 --- !u!50 &4143655805918826862
 Rigidbody2D:
   serializedVersion: 4
