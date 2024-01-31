@@ -7,6 +7,6 @@ public class Stage1 : MonoBehaviour
 {
     public void change_button()
     {
-        SceneManager.LoadScene("Stage1");
+        SceneManager.LoadScene("stage01");
     }
 }
