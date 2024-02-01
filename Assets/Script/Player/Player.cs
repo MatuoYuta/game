@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
 
 
 public class Player : MonoBehaviour
@@ -84,7 +86,7 @@ public class Player : MonoBehaviour
         _Move();
         _LookMoveDirect();
         _HitFloor();
-        Shake();
+        //Shake();
         //ChangeStage();
         //Sound();
         //_HitLadder();
@@ -235,7 +237,7 @@ public class Player : MonoBehaviour
                 {
                     // Playerオブジェクトを消去する
                     //Destroy(this.gameObject);
-                    myTransform.position = new Vector3(0, -1.45f, 0);
+                    SceneManager.LoadScene("stage01");
 
                 }
             }
@@ -381,7 +383,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Shake()
+    /*public void Shake()
     {
         switch (flag)
         {
@@ -413,7 +415,7 @@ public class Player : MonoBehaviour
 
                 break;
         }
-    }
+    }*/
 
     IEnumerator Change_time_kako()
     {
