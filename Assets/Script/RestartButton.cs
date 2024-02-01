@@ -22,9 +22,10 @@ public class RestartButton : MonoBehaviour
     public void RestartGame()
     {
         // ゲームをリスタートする前に、DontDestroyオブジェクトを破棄
-        Destroy(DontDestroy.instance.gameObject);
-
+        //Destroy(DontDestroy.instance.gameObject);
+        Debug.Log("りすたーと");
         // ゲームをリスタートする
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
 }
