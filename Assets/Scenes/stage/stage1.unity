@@ -15182,7 +15182,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.8125}
   m_EdgeRadius: 0
-<<<<<<< HEAD
 --- !u!1001 &2553386836878778557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15245,9 +15244,6 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c42004feaa5bd8541a39ed406300ec08, type: 3}
 --- !u!1001 &4599490689910658527
-=======
---- !u!1001 &2374494741622610011
->>>>>>> 4a00c107acd9e7b69c3b4c18a87c985b31838878
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
