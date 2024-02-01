@@ -1575,6 +1575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 543804402}
   Text: {fileID: 543804402}
+  targetObj: {fileID: 4143655805918826851, guid: 06524588b9d84cf4086cd7648218cccd, type: 3}
 --- !u!61 &1394084093
 BoxCollider2D:
   m_ObjectHideFlags: 0

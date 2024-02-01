@@ -10,6 +10,7 @@ public class butterflyFlg : MonoBehaviour
     public GameObject text;
     [SerializeField] GameObject Text;
     int cnt = 0;
+    public GameObject targetObj;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,7 @@ public class butterflyFlg : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        
         if (other.gameObject.tag == "Player")
         {
             if (Input.GetKeyDown(KeyCode.F))
@@ -49,6 +51,7 @@ public class butterflyFlg : MonoBehaviour
                 Debug.Log("test");
                 Text.gameObject.SetActive(true);
                 flg = true;
+                targetObj.GetComponent<Fade>().Fadeout();
             }
             
         }
