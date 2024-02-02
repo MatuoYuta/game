@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
         _Move();
         _LookMoveDirect();
         _HitFloor();
-        //Shake();
+        
         //ChangeStage();
         //Sound();
         //_HitLadder();
@@ -237,6 +237,7 @@ public class Player : MonoBehaviour
                 {
                     // Playerオブジェクトを消去する
                     //Destroy(this.gameObject);
+                    Shake();
                     SceneManager.LoadScene("stage01");
 
                 }
@@ -383,7 +384,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*public void Shake()
+    public void Shake()
     {
         switch (flag)
         {
@@ -415,7 +416,7 @@ public class Player : MonoBehaviour
 
                 break;
         }
-    }*/
+    }
 
     IEnumerator Change_time_kako()
     {
