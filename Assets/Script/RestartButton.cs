@@ -8,7 +8,7 @@ public class RestartButton : MonoBehaviour
     private void Awake()
     {
         // シングルトンパターンの実装
-        if (instance == null)
+        /*if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -16,7 +16,7 @@ public class RestartButton : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 
     public void RestartGame()

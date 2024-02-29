@@ -13,7 +13,9 @@ public class Stage01 : MonoBehaviour
     public GameObject targetObj;
 
     [SerializeField] GameObject clockani;
-
+    public GameObject kako_Botton;
+    public GameObject mirai_Bottun;
+    public GameObject ima_Button;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,9 @@ public class Stage01 : MonoBehaviour
 
         Debug.Log("アニメーション" + kako);
         _anim.SetBool("kako", kako);
-        
+        kako_Botton.SetActive(false);
+        mirai_Bottun.SetActive(false);
+        ima_Button.SetActive(false);
     }
 
     public void Go_ima()
@@ -51,18 +55,24 @@ public class Stage01 : MonoBehaviour
 
         Debug.Log("アニメーション" + ima);
         _anim.SetBool("ima", ima);
+        kako_Botton.SetActive(false);
+        mirai_Bottun.SetActive(false);
+        ima_Button.SetActive(false);
 
     }
 
     public void Go_mirai()
     {
 
-        ima = true;
+        mirai = true;
         targetObj.GetComponent<Player>().ChangeStage_mirai();
         Debug.Log("button");
 
-        Debug.Log("アニメーション" + ima);
-        _anim.SetBool("ima", ima);
+        Debug.Log("アニメーション" + mirai);
+        _anim.SetBool("mirai", mirai);
+        kako_Botton.SetActive(false);
+        mirai_Bottun.SetActive(false);
+        ima_Button.SetActive(false);
 
     }
 
