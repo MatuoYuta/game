@@ -29773,6 +29773,9 @@ MonoBehaviour:
   _anim: {fileID: 0}
   targetObj: {fileID: 1113102256}
   clockani: {fileID: 0}
+  kako_Botton: {fileID: 1153920053}
+  mirai_Bottun: {fileID: 1316583100}
+  ima_Button: {fileID: 663779171}
 --- !u!1001 &667190316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31348,6 +31351,9 @@ MonoBehaviour:
   _anim: {fileID: 0}
   targetObj: {fileID: 1113102256}
   clockani: {fileID: 0}
+  kako_Botton: {fileID: 1153920053}
+  mirai_Bottun: {fileID: 1316583100}
+  ima_Button: {fileID: 663779171}
 --- !u!1 &1173385030
 GameObject:
   m_ObjectHideFlags: 0
@@ -31666,6 +31672,9 @@ MonoBehaviour:
   _anim: {fileID: 0}
   targetObj: {fileID: 1113102256}
   clockani: {fileID: 0}
+  kako_Botton: {fileID: 1153920053}
+  mirai_Bottun: {fileID: 1316583100}
+  ima_Button: {fileID: 663779171}
 --- !u!1 &1337728171
 GameObject:
   m_ObjectHideFlags: 0
@@ -92480,8 +92489,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026989592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.32562, y: -9.5, z: -105.182434}
-  m_LocalScale: {x: 1336.35, y: 1, z: 1}
+  m_LocalPosition: {x: 48.32562, y: -58.4, z: -105.182434}
+  m_LocalScale: {x: 1336.35, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
