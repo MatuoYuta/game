@@ -16,8 +16,9 @@ public class Fade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
 
     public void Fadeout()
     {
