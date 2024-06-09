@@ -1,33 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ladder : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    // 他のColliderとの衝突を検出したときに呼ばれるメソッド
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        // 衝突したオブジェクトがプレイヤーである場合
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("プレイヤーと");
+            // プレイヤーがはしごに登っていることを示すフラグをtrueにする
             collision.GetComponent<Player>().IsLadder = true;
         }
         else
         {
+            // プレイヤーがはしごに登っていないことを示すフラグをfalseにする
             collision.GetComponent<Player>().IsLadder = false;
-
         }
-
     }
 }

@@ -2,35 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Menutyousei : MonoBehaviour
+public class MenuControl : MonoBehaviour
 {
-    [SerializeField] GameObject MenuObject;
-    bool menuzyoutai;
+    // メニューオブジェクトへの参照
+    [SerializeField] GameObject menuObject;
+
+    // メニューの表示状態を管理するフラグ
+    bool menuVisible;
 
     // Update is called once per frame
     void Update()
     {
-        if (menuzyoutai == false)
+        // メニューが非表示の場合
+        if (!menuVisible)
         {
+            // キャンセルボタンが押されたらメニューを表示
             if (Input.GetButtonDown("Cancel"))
             {
-                MenuObject.gameObject.SetActive(true);
-                menuzyoutai = true;
+                menuObject.SetActive(true);
+                menuVisible = true;
 
                 // ゲームを停止
                 Time.timeScale = 0f;
 
-                // マウスカーソルを表示にし、位置固定解除
+                // マウスカーソルを表示し、位置固定解除
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
             }
         }
         else
         {
+            // メニューが表示されている場合
+            // キャンセルボタンが押されたらメニューを非表示にする
             if (Input.GetButtonDown("Cancel"))
             {
-                MenuObject.gameObject.SetActive(false);
-                menuzyoutai = false;
+                menuObject.SetActive(false);
+                menuVisible = false;
 
                 // ゲームを再開
                 Time.timeScale = 1f;

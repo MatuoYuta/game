@@ -4,66 +4,58 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    private Animator anim1;
-    private Rigidbody2D rigid;
-    private BoxCollider2D col;
+    private Animator anim1; // ドアのアニメーター
+    private Rigidbody2D rigid; // Rigidbody2D コンポーネント
+    private BoxCollider2D col; // BoxCollider2D コンポーネント
 
-    float x;
-    float y;
-    float waitsecond = 0.05f;
+    float x; // ドアの x 座標
+    float y; // ドアの y 座標
+    float waitsecond = 0.05f; // 待機秒数
 
-    bool open = false;
-    [SerializeField] float testY;
+    bool open = false; // ドアが開いているかどうかを示すフラグ
+    [SerializeField] float testY; // ドアが開く y 座標の上限
+
     private void Start()
     {
-        x = this.gameObject.transform.position.x;
-        y = this.gameObject.transform.position.y;
+        x = transform.position.x; // 初期 x 座標を設定
+        y = transform.position.y; // 初期 y 座標を設定
     }
 
     void Update()
     {
         if (open)
         {
-            //transform.Translate(0, 0.2f, 0);
-            
+            // ドアが開いている場合の処理
             if (transform.position.y > testY)
             {
-                open = false;
+                open = false; // ドアが目標の高さに達したら開閉を停止
             }
         }
-        //transform.Translate(0, 0.2f, 0);
     }
 
-    private void Awake()
-    {
-        //anim1 = GetComponent<Animator>();
-        //anim1.SetBool("isOpen", false);
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Player>().HasKey == true)
+        // プレイヤーが鍵を持っているかどうかをチェックし、鍵を持っていればドアを開ける
+        if (collision.GetComponent<Player>()?.HasKey == true)
         {
-            StartCoroutine("Door_up");
-            Debug.Log("Door opened!");
-            collision.GetComponent<Player>().HasKey = false;
-
-        } else
+            StartCoroutine("DoorUp"); // ドアを開くコルーチンを実行
+            Debug.Log("Door opened!"); // ドアが開いたことをログで表示
+            collision.GetComponent<Player>().HasKey = false; // プレイヤーの鍵の所持フラグをリセット
+        }
+        else
         {
-            //Debug.Log("�J�M���Ȃ���");
+            // プレイヤーが鍵を持っていない場合の処理
+            // Debug.Log("Player does not have the key.");
         }
     }
 
-    IEnumerator Door_up()
+    IEnumerator DoorUp()
     {
-        open = true;
-        // �h�A���J�������������ɒǉ�
-        //anim1.SetBool("isOpen", true);
-        for (int i = 0; i < 5; i++)
+        open = true; // ドアが開く状態に設定
+        for (int i = 0; i < 5; i++) // ドアを徐々に上昇させる処理
         {
-            this.gameObject.transform.position = new Vector2(x, y + i);
-            yield return new WaitForSeconds(0.1f);
+            transform.position = new Vector2(x, y + i); // ドアの位置を上に移動
+            yield return new WaitForSeconds(0.1f); // 0.1秒待機
         }
-
     }
 }
-

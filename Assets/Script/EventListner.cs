@@ -1,34 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EventListner : MonoBehaviour
 {
-
+    // プレイヤーに接近したときに呼ばれるイベントハンドラ
     public void CheckEventHandler(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag("Player")){
+        // 衝突したオブジェクトがプレイヤーである場合
+        if (collider.gameObject.CompareTag("Player"))
+        {
             Debug.Log("近づいた");
 
+            // Rigidbody2D コンポーネントの物理挙動を動的に変更する
             var rb = GetComponent<Rigidbody2D>();
             rb.bodyType = RigidbodyType2D.Dynamic;
         }
-   
     }
 
+    // 衝突したときに呼ばれるイベントハンドラ
     public void HitEventHandler(Collider2D collider)
     {
         Debug.Log("当たった");
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

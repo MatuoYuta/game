@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StageSelect : MonoBehaviour
 {
-    public void change_button()
+    // ステージ選択画面に移動するメソッド
+    public void ChangeButton()
     {
+        // 「StageSelect」シーンをロード
         SceneManager.LoadScene("StageSelect");
     }
 }
