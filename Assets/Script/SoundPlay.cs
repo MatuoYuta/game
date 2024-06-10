@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundPlay : MonoBehaviour
@@ -6,14 +8,11 @@ public class SoundPlay : MonoBehaviour
 
     void Start()
     {
-        // AudioSource コンポーネントの取得
         audioSource = GetComponent<AudioSource>();
     }
 
-    // 音を再生するメソッド
     public void PlayStart()
     {
-        // 音を一度だけ再生
         audioSource.PlayOneShot(audioSource.clip);
     }
 }

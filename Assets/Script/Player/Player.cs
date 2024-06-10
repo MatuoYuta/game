@@ -4,83 +4,76 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+
+
 public class Player : MonoBehaviour
 {
-    // オーディオクリップとソース
     public AudioClip sound1;
-    private AudioSource audioSource;
+    AudioSource audioSource;
 
-    // プレイヤーの移動関連のパラメータ
     [SerializeField, Header("移動速度")]
     private float _movespeed;
     [SerializeField, Header("ジャンプ速度")]
     private float _jumpSpeed;
     [SerializeField, Header("梯子で上る速度")]
     private float _ladderSpeed;
-
-    // 梯子関連のフラグとレイヤーマスク
     public bool IsLadder;
-    public LayerMask ladderLayer;
+    [Header("踏みつけ判定の高さの割合(%)")] public float stepOnRate;
 
-    // 踏みつけ判定の高さの割合
-    [Header("踏みつけ判定の高さの割合(%)")]
-    public float stepOnRate;
-
-    // プライベート変数
+    #region//プライベート変数
     private string fallFloorTag = "FallFloor";
     private CapsuleCollider2D capcol = null;
+    #endregion
 
-    // アニメーション関連のフラグとコンポーネント
     private bool _bjump;
     private bool _bladder;
     private bool _run;
     private Animator _anim;
     private Vector2 _inputDirection;
     private Rigidbody2D _rigid;
-    private float currentMoveSpeed;
+    public LayerMask ladderLayer;
+    float currentMoveSpeed;
 
-    // プレイヤーの状態
+
     public bool HasKey;
 
-    // ポジションと変換関連
-    private Vector3 pos;
-    private Transform myTransform;
-    private bool now_kako;
-    private bool now_mirai;
+    Vector3 pos;
+    Transform myTransform;
+    bool now_kako;
+    bool now_mirai;
 
-    // カメラとフラグ関連
-    private GameObject CAMERA;
-    private int flag = 0;
+    GameObject CAMERA;
+    int flag = 0;
     public GameObject aka;
 
-    // UIオブジェクト
-    [SerializeField] private GameObject TCanvas2Object;
-    [SerializeField] private GameObject clockObject;
-    [SerializeField] private GameObject TCanvas;
-    [SerializeField] private GameObject TCanvas_ima;
-    [SerializeField] private GameObject TCanvas_mirai;
-    [SerializeField] private GameObject TCanvas_kako;
-    [SerializeField] private GameObject Button_kako;
-    [SerializeField] private GameObject Button_ima;
-    [SerializeField] private GameObject Button_mirai;
+    [SerializeField] GameObject TCanvas2Object;
+    [SerializeField] GameObject clockObject;
+    [SerializeField] GameObject TCanvas;
+    [SerializeField] GameObject TCanvas_ima;
+    [SerializeField] GameObject TCanvas_mirai;
+    [SerializeField] GameObject TCanvas_kako;
+    [SerializeField] GameObject Button_kako;
+    [SerializeField] GameObject Button_ima;
+    [SerializeField] GameObject Button_mirai;
 
     // Start is called before the first frame update
     void Start()
-    {
-        // コンポーネントの取得
+    {   
+        //Componentを取得
         audioSource = GetComponent<AudioSource>();
+
+        Application.targetFrameRate = 60;
         _rigid = GetComponent<Rigidbody2D>();
         capcol = GetComponent<CapsuleCollider2D>();
-        _anim = GetComponent<Animator>();
-
-        // 初期設定
-        Application.targetFrameRate = 60;
         _bjump = false;
         _bladder = false;
+        _anim = GetComponent<Animator>();
         HasKey = false;
         _run = false;
         IsLadder = false;
-        pos = Vector3.zero;
+        pos.x = 0;
+        pos.y = 0;
+        pos.z = 0;
         now_kako = false;
         now_mirai = false;
         CAMERA = GameObject.Find("Main Camera");
@@ -93,10 +86,14 @@ public class Player : MonoBehaviour
         _Move();
         _LookMoveDirect();
         _HitFloor();
+        
+        //ChangeStage();
+        //Sound();
+        //_HitLadder();
 
-        // 梯子の移動ロジック
         if (Input.GetKey(KeyCode.W) && IsLadder && _inputDirection.y != 0.0f)
         {
+
             _rigid.velocity = new Vector2(0, _inputDirection.y) * _ladderSpeed;
             _rigid.gravityScale = 0;
             _anim.SetBool("ladder", _inputDirection.y != 0.0f);
@@ -105,29 +102,53 @@ public class Player : MonoBehaviour
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
             _rigid.gravityScale = 1;
+            //_anim.SetBool("ladder", IsLadder);
+
         }
+
     }
 
-    // プレイヤーの移動
+    /*public void Sound()
+    {
+        if(_run == true)
+        {
+            //音(sound1)を鳴らす
+            audioSource.PlayOneShot(sound1);
+        }
+    }*/
+
     public void _Move()
     {
+        //_movespeed = 8;
         currentMoveSpeed = _movespeed;
         _rigid.velocity = new Vector2(_inputDirection.x * currentMoveSpeed, _rigid.velocity.y);
-        _run = _inputDirection.x != 0.0f;
+        if(_inputDirection.x != 0.0f)
+        {
+            _run = true;
+        }
+        else
+        {
+            _run = false;
+        }
         _anim.SetBool("run", _run);
+
+
     }
 
-    // 移動入力の処理
     public void _OnMove(InputAction.CallbackContext context)
     {
         _inputDirection = context.ReadValue<Vector2>();
+        if (_run == true)
+        {
+            //音(sound1)を鳴らす
+            //audioSource.PlayOneShot(sound1);
+        }
+
     }
 
-    // プレイヤーの向きを変更
     private void _LookMoveDirect()
     {
-        if (!IsLadder)
-        {
+        if(IsLadder == false){
             if (_inputDirection.x < 0.0f)
             {
                 transform.eulerAngles = Vector3.zero;
@@ -139,109 +160,230 @@ public class Player : MonoBehaviour
         }
     }
 
-    // ジャンプ入力の処理
     public void _OnJump(InputAction.CallbackContext context)
     {
         if (!context.performed || _bjump) return;
+
         _rigid.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+
     }
 
-    // フロアへの接触を処理
     private void _HitFloor()
     {
         int layerMask = LayerMask.GetMask("Floor");
         Vector3 rayPos = transform.position - new Vector3(0.0f, transform.lossyScale.y / 0.65f);
         Vector3 raySize = new Vector3(transform.lossyScale.x - 0.3f, 0.1f);
         RaycastHit2D rayHit = Physics2D.BoxCast(rayPos, raySize, 0.0f, Vector2.zero, 0.0f, layerMask);
-
         if (rayHit.transform == null)
         {
             _movespeed = 3;
+
             _bjump = true;
-            if (!IsLadder)
+            if(!IsLadder)
             {
                 _anim.SetBool("jump", _bjump);
             }
+            //_movespeed = 3.0f;
+
+
             return;
         }
 
-        if (rayHit.transform.tag == "floor" && _bjump || rayHit.transform.tag == "FallFloor" && _bjump || rayHit.transform.tag == "MoveFloor" && _bjump)
+        if (rayHit.transform.tag == "floor" && _bjump)
         {
             _bjump = false;
             _anim.SetBool("jump", _bjump);
         }
-
+        else if (rayHit.transform.tag == "FallFloor" && _bjump)
+        {
+            _bjump = false;
+            _anim.SetBool("jump", _bjump);
+        }
+        else if (rayHit.transform.tag == "MoveFloor" && _bjump)
+        {
+            _bjump = false;
+            _anim.SetBool("jump", _bjump);
+        }
         _movespeed = 8.0f;
+        /*if (_bjump == true)
+        {
+            _movespeed = 3.0f;
+            Debug.Log(currentMoveSpeed);
+        }
+        else
+        {
+            _movespeed = 8.0f;
+        }*/
     }
 
-    // トリガーに入った時の処理
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "ladder")
+        if(collision.gameObject.tag == "ladder")
         {
             IsLadder = true;
             _anim.SetBool("ladder", IsLadder);
+
         }
 
-        // 敵やトラップに触れた時の処理
-        if (collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace" || collision.gameObject.tag == "toge")
+        // 接触したオブジェクトのtag名がEnemyの場合は
+        if (collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace"|| collision.gameObject.tag == "toge")
         {
             flag = 1;
-
+      
+            // Playerオブジェクトがnullでないかチェック
             if (this.gameObject != null)
             {
-                if (collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace" || collision.gameObject.tag == "toge")
+                if(collision.gameObject.tag == "EnemyController" || collision.gameObject.tag == "DeadSpace" || collision.gameObject.tag == "toge")
                 {
+                    // Playerオブジェクトを消去する
+                    //Destroy(this.gameObject);
                     Shake();
                     SceneManager.LoadScene("stage01");
+
                 }
             }
             else
             {
+                // デバッグログを出力して状況を確認
                 Debug.Log("Playerオブジェクトが既に破棄されています");
             }
         }
     }
 
-    // トリガーを出た時の処理
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "ladder")
         {
             IsLadder = false;
             _anim.SetBool("ladder", IsLadder);
+
         }
     }
 
-    // 衝突時の処理
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red; // ギズモの色を赤に設定
+
+        // ボックスキャストのパラメーターをシーンビューに描画
+        Gizmos.DrawWireCube(transform.position - new Vector3(0.0f, transform.lossyScale.y / 0.65f), new Vector3(transform.lossyScale.x - 0.3f, 0.1f));
+    }
+
+    public void _OnLadder(InputAction.CallbackContext context)
+    {
+        float LadderSpeed = _ladderSpeed;
+        _rigid.velocity = new Vector2(_rigid.velocity.x, _inputDirection.y * LadderSpeed);
+
+    }
+
+    /*private void _HitLadder()
+    {
+        int ladderLayer = LayerMask.GetMask("Ladder");
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 2, ladderLayer);
+
+        if (hitInfo.collider != null)
+        {
+            Debug.Log(hitInfo.collider.name + "がある");
+            if (Input.GetKey(KeyCode.W) && IsLadder)
+            {
+                _rigid.velocity = new Vector2(_rigid.velocity.x, 3);
+                _rigid.gravityScale = 0;
+                IsLadder = true;
+            }
+            else
+            {
+                _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
+                _rigid.gravityScale = 1;
+                IsLadder = false;
+
+            }
+        }
+    }*/
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //bool enemy = (collision.collider.tag == enemyTag);
+        //bool moveFloor = (collision.collider.tag == moveFloorTag);
         bool fallFloor = (collision.collider.tag == fallFloorTag);
 
         if (fallFloor)
         {
+            //踏みつけ判定になる高さ
             float stepOnHeight = (capcol.size.y * (stepOnRate / 100f));
+
+            //踏みつけ判定のワールド座標
             float judgePos = transform.position.y - (capcol.size.y / 2f) + stepOnHeight;
 
             foreach (ContactPoint2D p in collision.contacts)
             {
                 if (p.point.y < judgePos)
                 {
-                    ObjectCollision o = collision.gameObject.GetComponent<ObjectCollision>();
-                    if (o != null)
+                    if (fallFloor)
                     {
-                        o.playerStepOn = true;
-                    }
-                    else
-                    {
-                        Debug.Log("ObjectCollisionが付いてないよ!");
+                        ObjectCollision o = collision.gameObject.GetComponent<ObjectCollision>();
+                        if (o != null)
+                        {
+                            if (fallFloor)
+                            {
+                                o.playerStepOn = true;
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log("ObjectCollisionが付いてないよ!");
+                        }
+
                     }
                 }
             }
         }
     }
 
-    // カメラを揺らす
+    public void ChangeStage_kako()
+    {
+       
+        StartCoroutine("Change_time_kako");
+        if (now_mirai)
+        {
+            pos.x = 1000;
+        }
+        else
+        {
+            pos.x = 500;
+        }
+        
+        
+    }
+
+    public void ChangeStage_ima()
+    {
+
+        StartCoroutine("Change_time_ima");
+        if (now_mirai)
+        {
+            pos.x = 500;
+        }
+        else
+        {
+            pos.x = -500;
+        }
+        
+
+    }
+
+    public void ChangeStage_mirai()
+    {
+
+        StartCoroutine("Change_time_mirai");
+        if (now_kako)
+        {
+            pos.x = -1000;
+        }
+        else
+        {
+            pos.x = -500;
+        }
+    }
+
     public void Shake()
     {
         switch (flag)
@@ -252,55 +394,90 @@ public class Player : MonoBehaviour
             case 3:
                 CAMERA.transform.Translate(30 * Time.deltaTime, 0, 0);
                 if (CAMERA.transform.position.x >= 1.0f)
-                    flag++;
+                    Debug.Log("ケース３");
+                    flag++; 
+
                 break;
             case 2:
                 CAMERA.transform.Translate(-30 * Time.deltaTime, 0, 0);
                 if (CAMERA.transform.position.x <= -1.0f)
-                    flag++;
+                    Debug.Log("ケース2");
+                flag++; //aka.SetActive(false);
                 break;
             case 4:
                 CAMERA.transform.Translate(-30 * Time.deltaTime, 0, 0);
                 if (CAMERA.transform.position.x <= 0)
                 {
+                    Debug.Log("ケース4");
+
                     flag = 0;
                     aka.SetActive(false);
                 }
+
                 break;
         }
     }
 
-    // 時間の変更
-    public void ChangeStage_kako()
-    {
-        StartCoroutine(Change_time_kako());
-    }
-
-    public void ChangeStage_ima()
-    {
-        StartCoroutine(Change_time_ima());
-    }
-
-    public void ChangeStage_mirai()
-    {
-        StartCoroutine(Change_time_mirai());
-    }
-
-    // 過去に時間変更するコルーチン
     IEnumerator Change_time_kako()
     {
-        yield return null;
+        Debug.Log("Testこるーちん");
+        yield return new WaitForSeconds(3.0f);
+        Debug.Log("3秒たったぜ");
+        myTransform.position += new Vector3(pos.x, pos.y, pos.z);
+        Time.timeScale = 1f;
+        now_kako = true;
+        now_mirai = false;
+        Stage01.kako = false;
+        TCanvas.SetActive(true);
+        TCanvas_ima.SetActive(false);
+        TCanvas_kako.SetActive(true);
+        TCanvas_mirai.SetActive(false);
+        TCanvas2Object.SetActive(false);
+        clockObject.SetActive(false);
+        Button_kako.SetActive(false);
+        Button_ima.SetActive(true);
+        Button_mirai.SetActive(true);
     }
 
-    // 現在に時間変更するコルーチン
     IEnumerator Change_time_ima()
     {
-        yield return null;
+        Debug.Log("Testこるーちん");
+        yield return new WaitForSeconds(3.0f);
+        Debug.Log("3秒たったぜ");
+        myTransform.position += new Vector3(pos.x, pos.y, pos.z);
+        Time.timeScale = 1f;
+        now_kako = false;
+        now_mirai = false;
+        Stage01.kako = false;
+        TCanvas.SetActive(true);
+        TCanvas_ima.SetActive(true);
+        TCanvas_kako.SetActive(false);
+        TCanvas_mirai.SetActive(false);
+        TCanvas2Object.SetActive(false);
+        clockObject.SetActive(false);
+        Button_kako.SetActive(true);
+        Button_ima.SetActive(false);
+        Button_mirai.SetActive(true);
     }
 
-    // 未来に時間変更するコルーチン
     IEnumerator Change_time_mirai()
     {
-        yield return null;
+        Debug.Log("Testこるーちん");
+        yield return new WaitForSeconds(3.0f);
+        Debug.Log("3秒たったぜ");
+        myTransform.position += new Vector3(pos.x, pos.y, pos.z);
+        Time.timeScale = 1f;
+        now_kako = false;
+        now_mirai = true;
+        Stage01.kako = false;
+        TCanvas.SetActive(true);
+        TCanvas_ima.SetActive(false);
+        TCanvas_kako.SetActive(false);
+        TCanvas_mirai.SetActive(true);
+        TCanvas2Object.SetActive(false);
+        clockObject.SetActive(false);
+        Button_kako.SetActive(true);
+        Button_ima.SetActive(true);
+        Button_mirai.SetActive(false);
     }
 }

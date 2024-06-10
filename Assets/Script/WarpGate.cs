@@ -11,46 +11,52 @@ public class WarpGate : MonoBehaviour
     // ワープを実行する対象のオブジェクト
     public GameObject targetObject;
 
-    void Update()
+    private void Update()
     {
-        // ワープキーが押されたかどうかを確認
+        // キーが押されたかどうかを確認
         if (Input.GetKeyDown(warpKey))
         {
-            // ターゲットオブジェクトの前にプレイヤーがいるかを確認してワープ実行
+            // ターゲットオブジェクトの前でキーが押されたかどうかを確認
             if (IsPlayerInFrontOfGate())
             {
+                // ワープを実行
                 WarpPlayer();
             }
         }
     }
 
-    // プレイヤーがワープゲートの前にいるかをチェックするメソッド
     private bool IsPlayerInFrontOfGate()
     {
-        // ターゲットオブジェクトとプレイヤーの Collider2D を取得
-        Collider2D targetCollider = targetObject?.GetComponent<Collider2D>();
-        Collider2D playerCollider = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Collider2D>();
-
-        // ターゲットオブジェクトとプレイヤーが存在しない場合は警告をログに出力して false を返す
-        if (targetCollider == null || playerCollider == null)
+        if (targetObject == null)
         {
-            Debug.LogWarning("Target object or player not found or does not have a Collider2D component");
+            Debug.LogWarning("Target object not set");
             return false;
         }
 
-        // ターゲットオブジェクトの前にプレイヤーがいるかどうかを物理的に判定して結果を返す
+        // ターゲットオブジェクトの前にプレイヤーがいるかどうかを確認
+        Collider2D targetCollider = targetObject.GetComponent<Collider2D>();
+        if (targetCollider == null)
+        {
+            Debug.LogWarning("Target object does not have a Collider2D component");
+            return false;
+        }
+
+        Collider2D playerCollider = GameObject.FindGameObjectWithTag("Player")?.GetComponent<Collider2D>();
+        if (playerCollider == null)
+        {
+            Debug.LogWarning("Player object not found");
+            return false;
+        }
+
         return Physics2D.IsTouching(targetCollider, playerCollider);
     }
 
-    // プレイヤーをワープ先の位置に移動させるメソッド
     private void WarpPlayer()
     {
-        // ワープ先の位置が設定されているかを確認
+        // プレイヤーをワープ先の位置に移動させる
         if (warpDestination != null)
         {
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-
-            // プレイヤーオブジェクトが存在するかを確認してワープ実行
             if (playerObject != null)
             {
                 Transform playerTransform = playerObject.transform;
@@ -68,3 +74,4 @@ public class WarpGate : MonoBehaviour
         }
     }
 }
+

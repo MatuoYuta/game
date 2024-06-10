@@ -1,11 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SphereDrop : MonoBehaviour
 {
-    public GameObject target; // 対象オブジェクト
+    public GameObject target;
 
-    bool check = false; // チェックフラグ
+    bool check = false;
+    void Start()
+    {
 
+    }
     void Update()
     {
         /*Vector3 cube = target.transform.position;
@@ -15,24 +20,21 @@ public class SphereDrop : MonoBehaviour
         {
             SphereGravity();
         }*/
-
-        // チェックがされた場合
         if (check)
         {
             var rb = GetComponent<Rigidbody2D>();
-            rb.bodyType = RigidbodyType2D.Dynamic; // Rigidbody の動的なタイプに変更
+            rb.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
-    // 球体に重力を適用するメソッド
     void SphereGravity()
     {
-        GetComponent<Rigidbody>().useGravity = true; // 重力を有効にする
+        GetComponent<Rigidbody>().useGravity = true;
     }
 
-    // チェックイベントの処理
     public void CheckEventHandler(Collider2D collider)
     {
-        check = true; // チェックフラグを立てる
+        check = true;
     }
+
 }

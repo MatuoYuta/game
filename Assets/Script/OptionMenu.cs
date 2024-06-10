@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class OptionMenu : MonoBehaviour
 {
-    // メニューボタンが押された時に呼び出されるメソッド
-    public void MenuButton()
+    public void Menu_button()
     {
-        // Option シーンを読み込む
         SceneManager.LoadScene("Option");
     }
 }

@@ -1,25 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
 public class StickyPlatform : MonoBehaviour
 {
-    // プレイヤーが床の上に入った時に実行されるメソッド
+    // 床の上側コライダーの中に入ったときに実行
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 衝突したオブジェクトがプレイヤーであるか確認し、プレイヤーを床の子オブジェクトにする
-        if (collision.gameObject.CompareTag("Player"))
+        // 衝突したオブジェクト名がPlayerなら、床の子オブジェクトにする
+        if (collision.gameObject.name == "norun")
         {
-            collision.gameObject.transform.SetParent(transform); // プレイヤーを床の子オブジェクトに設定
+            collision.gameObject.transform.SetParent(transform);
+
         }
     }
-
-    // プレイヤーが床の上から離れた時に実行されるメソッド
+    // 床の上側コライダーから離れたときに実行
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // 衝突したオブジェクトがプレイヤーであるか確認し、プレイヤーを床の子オブジェクトから解除する
-        if (collision.gameObject.CompareTag("Player"))
+        // 衝突したオブジェクト名がPlayerなら、床の子オブジェクトから解除する
+        if (collision.gameObject.name == "norun")
         {
-            collision.gameObject.transform.SetParent(null); // プレイヤーの親を解除
-            DontDestroyOnLoad(collision.gameObject); // シーン遷移してもプレイヤーが残るように設定
+            collision.gameObject.transform.SetParent(null);
+            DontDestroyOnLoad(collision.gameObject);
+
         }
     }
 }

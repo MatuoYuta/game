@@ -6,14 +6,11 @@ public class Key : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            // プレイヤーがカギを取得した場合の処理
-            Player player = collision.GetComponent<Player>(); // プレイヤーコンポーネントを取得
-            if (player != null)
-            {
-                player.HasKey = true; // プレイヤーの鍵の所持フラグを設定
-                Destroy(gameObject); // カギのゲームオブジェクトを削除
-                Debug.Log("Player obtained the key."); // デバッグログにメッセージを表示
-            }
+            // プレイヤーがカギを取った場合
+            collision.GetComponent<Player>().HasKey = true;
+            Destroy(gameObject); // カギを削除
+            Debug.Log(collision.GetComponent<Player>().HasKey);
         }
     }
 }
+

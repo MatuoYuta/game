@@ -1,39 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-// プレイヤーを追跡するカメラの管理を行うスクリプト
 public class CameraManager : MonoBehaviour
 {
-    private Player _player;         // プレイヤーへの参照
-    private Vector3 _initPos;       // カメラの初期位置
+    private Player _player;
+    private Vector3 _initPos;
 
-    // Startメソッドは最初のフレームの前に呼び出される
+    // Start is called before the first frame update
     void Start()
     {
-        // シーン内からプレイヤーオブジェクトを見つける
         _player = FindObjectOfType<Player>();
-
-        // カメラの初期位置を設定する
         _initPos = transform.position;
+
     }
 
-    // Updateメソッドはフレームごとに呼び出される
+    // Update is called once per frame
     void Update()
     {
-        // プレイヤーを追跡する
         _FollowPlayer();
     }
-
-    // プレイヤーを追跡するメソッド
     private void _FollowPlayer()
     {
-        // プレイヤーが存在するかチェックする
+        // _playerがnullでないかチェック
         if (_player != null)
         {
-            // プレイヤーの位置を取得する
             float y = _player.transform.position.y;
             float x = _player.transform.position.x;
-
-            // カメラの位置をプレイヤーの位置に追従させる
+            /*x = Mathf.Clamp(x, _initPos.x, Mathf.Infinity);
+            y = Mathf.Clamp(y, _initPos.y, Mathf.Infinity);*/
             transform.position = new Vector3(x, y, transform.position.z);
         }
     }

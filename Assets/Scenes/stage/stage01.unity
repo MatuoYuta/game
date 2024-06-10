@@ -31460,7 +31460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuObject: {fileID: 1202684519}
-  menuzyoutai: 0
 --- !u!4 &1337728173
 Transform:
   m_ObjectHideFlags: 0
@@ -64203,7 +64202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4599490689482798534, guid: a19462abf2ce54748b95ba7e01c1013b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4599490689592062654, guid: a19462abf2ce54748b95ba7e01c1013b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target

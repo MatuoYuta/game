@@ -3,29 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class StageManager : MonoBehaviour
 {
-    // 次のステージに進むメソッド
-    public void NextStage()
+    public void nextStage()
     {
-        // アンロックされたステージの情報を取得
-        int stageUnlock = PlayerPrefs.GetInt("StageUnlock");
+        int StageUnlock = PlayerPrefs.GetInt("StageUnlock");
 
-        // 次のシーンのインデックスを取得
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-
-        // 次のシーンがビルド設定内に存在するか確認
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        int NextScene = SceneManager.GetActiveScene().buildIndex + 1;
+        if (NextScene < SceneManager.sceneCountInBuildSettings)
         {
-            // アンロックされたステージが次のステージよりも小さい場合、次のステージをアンロック
-            if (stageUnlock < nextSceneIndex)
-                PlayerPrefs.SetInt("StageUnlock", nextSceneIndex);
+            if (StageUnlock < NextScene) PlayerPrefs.SetInt("StageUnlock", NextScene);
 
-            // 次のステージを読み込む
-            SceneManager.LoadScene(nextSceneIndex);
+            SceneManager.LoadScene(NextScene);
         }
         else
-        {
-            // 最後のシーンの場合、最初のシーンを読み込む
             SceneManager.LoadScene(0);
-        }
     }
 }

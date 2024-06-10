@@ -4,24 +4,12 @@ using UnityEngine;
 
 public class FallDownFloor : MonoBehaviour
 {
-    // スプライトがあるオブジェクト
-    [Header("スプライトがあるオブジェクト")]
-    public GameObject spriteObj;
-    // 振動幅
-    [Header("振動幅")]
-    public float vibrationWidth = 0.05f;
-    // 振動速度
-    [Header("振動速度")]
-    public float vibrationSpeed = 30.0f;
-    // 落ちるまでの時間
-    [Header("落ちるまでの時間")]
-    public float fallTime = 1.0f;
-    // 落ちていく速度
-    [Header("落ちていく速度")]
-    public float fallSpeed = 10.0f;
-    // 落ちてから戻ってくる時間
-    [Header("落ちてから戻ってくる時間")]
-    public float returnTime = 5.0f;
+    [Header("スプライトがあるオブジェクト")] public GameObject spriteObj;
+    [Header("振動幅")] public float vibrationWidth = 0.05f;
+    [Header("振動速度")] public float vibrationSpeed = 30.0f;
+    [Header("落ちるまでの時間")] public float fallTime = 1.0f;
+    [Header("落ちていく速度")] public float fallSpeed = 10.0f;
+    [Header("落ちてから戻ってくる時間")] public float returnTime = 5.0f;
 
     private bool isOn;
     private bool isFall;
@@ -38,9 +26,10 @@ public class FallDownFloor : MonoBehaviour
     private float returnTimer = 0.0f;
     private float blinkTimer = 0.0f;
 
+
     private void Start()
     {
-        // 初期設定
+        //初期設定
         col = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         oc = GetComponent<ObjectCollision>();
@@ -65,20 +54,20 @@ public class FallDownFloor : MonoBehaviour
 
     private void Update()
     {
-        // プレイヤーが1回でも乗ったらフラグをオンに
+        //プレイヤーが1回でも乗ったらフラグをオンに
         if (oc.playerStepOn)
         {
             isOn = true;
             oc.playerStepOn = false;
         }
 
-        // プレイヤーがのってから落ちるまでの間
+        //プレイヤーがのってから落ちるまでの間
         if (isOn && !isFall)
         {
-            // 震動する
+            //震動する
             spriteObj.transform.position = spriteDefaultPos + new Vector3(Mathf.Sin(timer * vibrationSpeed) * vibrationWidth, 0, 0);
 
-            // 一定時間たったら落ちる
+            //一定時間たったら落ちる
             if (timer > fallTime)
             {
                 isFall = true;
@@ -87,27 +76,27 @@ public class FallDownFloor : MonoBehaviour
             timer += Time.deltaTime;
         }
 
-        // 一定時間たつと明滅して戻ってくる
+        //一定時間たつと明滅して戻ってくる
         if (isReturn)
         {
-            // 明滅　ついている時に戻る
+            //明滅　ついている時に戻る
             if (blinkTimer > 0.2f)
             {
                 sr.enabled = true;
                 blinkTimer = 0.0f;
             }
-            // 明滅　消えているとき
+            //明滅　消えているとき
             else if (blinkTimer > 0.1f)
             {
                 sr.enabled = false;
             }
-            // 明滅　ついているとき
+            //明滅　ついているとき
             else
             {
                 sr.enabled = true;
             }
 
-            // 1秒たったら明滅終わり
+            //1秒たったら明滅終わり
             if (returnTimer > 1.0f)
             {
                 isReturn = false;
@@ -125,12 +114,12 @@ public class FallDownFloor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // 落下中
+        //落下中
         if (isFall)
         {
             rb.velocity = fallVelocity;
 
-            // 一定時間たつと元の位置に戻る
+            //一定時間たつと元の位置に戻る
             if (fallingTimer > returnTime)
             {
                 isReturn = true;
