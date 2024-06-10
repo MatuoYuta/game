@@ -87,9 +87,6 @@ public class Player : MonoBehaviour
         _LookMoveDirect();
         _HitFloor();
         
-        //ChangeStage();
-        //Sound();
-        //_HitLadder();
 
         if (Input.GetKey(KeyCode.W) && IsLadder && _inputDirection.y != 0.0f)
         {
@@ -102,20 +99,11 @@ public class Player : MonoBehaviour
         {
             _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
             _rigid.gravityScale = 1;
-            //_anim.SetBool("ladder", IsLadder);
 
         }
 
     }
 
-    /*public void Sound()
-    {
-        if(_run == true)
-        {
-            //‰¹(sound1)‚ð–Â‚ç‚·
-            audioSource.PlayOneShot(sound1);
-        }
-    }*/
 
     public void _Move()
     {
@@ -138,11 +126,6 @@ public class Player : MonoBehaviour
     public void _OnMove(InputAction.CallbackContext context)
     {
         _inputDirection = context.ReadValue<Vector2>();
-        if (_run == true)
-        {
-            //‰¹(sound1)‚ð–Â‚ç‚·
-            //audioSource.PlayOneShot(sound1);
-        }
 
     }
 
@@ -183,9 +166,6 @@ public class Player : MonoBehaviour
             {
                 _anim.SetBool("jump", _bjump);
             }
-            //_movespeed = 3.0f;
-
-
             return;
         }
 
@@ -205,15 +185,6 @@ public class Player : MonoBehaviour
             _anim.SetBool("jump", _bjump);
         }
         _movespeed = 8.0f;
-        /*if (_bjump == true)
-        {
-            _movespeed = 3.0f;
-            Debug.Log(currentMoveSpeed);
-        }
-        else
-        {
-            _movespeed = 8.0f;
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -275,34 +246,10 @@ public class Player : MonoBehaviour
 
     }
 
-    /*private void _HitLadder()
-    {
-        int ladderLayer = LayerMask.GetMask("Ladder");
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.up, 2, ladderLayer);
-
-        if (hitInfo.collider != null)
-        {
-            Debug.Log(hitInfo.collider.name + "‚ª‚ ‚é");
-            if (Input.GetKey(KeyCode.W) && IsLadder)
-            {
-                _rigid.velocity = new Vector2(_rigid.velocity.x, 3);
-                _rigid.gravityScale = 0;
-                IsLadder = true;
-            }
-            else
-            {
-                _rigid.velocity = new Vector2(_rigid.velocity.x, _rigid.velocity.y);
-                _rigid.gravityScale = 1;
-                IsLadder = false;
-
-            }
-        }
-    }*/
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //bool enemy = (collision.collider.tag == enemyTag);
-        //bool moveFloor = (collision.collider.tag == moveFloorTag);
+    
         bool fallFloor = (collision.collider.tag == fallFloorTag);
 
         if (fallFloor)
@@ -366,8 +313,6 @@ public class Player : MonoBehaviour
         {
             pos.x = -500;
         }
-        
-
     }
 
     public void ChangeStage_mirai()

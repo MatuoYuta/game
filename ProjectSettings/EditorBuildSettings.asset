@@ -21,30 +21,30 @@ EditorBuildSettings:
     path: Assets/Scenes/stage/stage01.unity
     guid: 410e24e2772ed924dbf23f31ec89648a
   - enabled: 0
-    path: Assets/Scenes/stage/stage1.unity
+    path: Assets/Scenes/stage/TestStage/stage1.unity
     guid: e8651c6e5dff20b40b628d479bfef3d7
   - enabled: 0
-    path: Assets/Scenes/stage/stage1kako.unity
+    path: Assets/Scenes/stage/TestStage/stage1kako.unity
     guid: e6d9f1570863ec44ab90e45417e62adb
   - enabled: 0
-    path: Assets/Scenes/stage/stage2.unity
+    path: Assets/Scenes/stage/TestStage/stage2.unity
     guid: ab8352b6fcec8104184828ec2adaebc9
   - enabled: 0
-    path: Assets/Scenes/stage/stage2mirai.unity
+    path: Assets/Scenes/stage/TestStage/stage2mirai.unity
     guid: 28adbbb2e06e03a4abd3fb59c68add3b
   - enabled: 0
-    path: Assets/Scenes/stage/PVstage.unity
+    path: Assets/Scenes/stage/TestStage/PVstage.unity
     guid: d416711547fb39949bc653b4cc54d9b7
   - enabled: 0
-    path: Assets/Scenes/stage/PVstagemiraoi.unity
+    path: Assets/Scenes/stage/TestStage/PVstagemiraoi.unity
     guid: 8352b961f2f653e4bac9c53e51fd964d
   - enabled: 0
-    path: Assets/Scenes/stage/PVstagekako.unity
+    path: Assets/Scenes/stage/TestStage/PVstagekako.unity
     guid: f31d14c695aa6534b92a2e916a622e4d
   - enabled: 0
-    path: Assets/Scenes/stage/TestTsuchi.unity
+    path: Assets/Scenes/stage/TestStage/TestTsuchi.unity
     guid: 850decfd037f46c40b9a2af8146c01cc
   - enabled: 0
-    path: Assets/Scenes/stage/TestTsuchi 1.unity
+    path: Assets/Scenes/stage/TestStage/TestTsuchi 1.unity
     guid: a4501bb4aac9d7846961a2eef6850249
   m_configObjects: {}
