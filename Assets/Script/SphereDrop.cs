@@ -13,13 +13,6 @@ public class SphereDrop : MonoBehaviour
     }
     void Update()
     {
-        /*Vector3 cube = target.transform.position;
-        float dis = Vector3.Distance(cube, this.transform.position);
-
-        if (dis < 3f)
-        {
-            SphereGravity();
-        }*/
         if (check)
         {
             var rb = GetComponent<Rigidbody2D>();
