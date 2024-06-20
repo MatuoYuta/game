@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class SoundPlay : MonoBehaviour
 {
-    AudioSource audioSource;
+    // AudioSourceコンポーネント
+    private AudioSource audioSource;
 
     void Start()
     {
+        // このオブジェクトのAudioSourceコンポーネントを取得
         audioSource = GetComponent<AudioSource>();
     }
 
     public void PlayStart()
     {
+        // クリップを一度だけ再生
         audioSource.PlayOneShot(audioSource.clip);
     }
 }

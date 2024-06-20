@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartButton : MonoBehaviour
 {
+    // シングルトンパターンのインスタンス
     private static RestartButton instance;
 
     private void Awake()
@@ -23,9 +24,13 @@ public class RestartButton : MonoBehaviour
     {
         // ゲームをリスタートする前に、DontDestroyオブジェクトを破棄
         //Destroy(DontDestroy.instance.gameObject);
+
         Debug.Log("りすたーと");
-        // ゲームをリスタートする
+
+        // 現在のシーンを再読み込みする
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        // ゲームの時間を通常に戻す
         Time.timeScale = 1f;
     }
 }
